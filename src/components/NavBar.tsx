@@ -2,7 +2,6 @@ import { Box, Flex, Link, Text } from "@chakra-ui/react";
 
 const navTexPad = "0 20px";
 const darkGray = "#474747"
-const offWhite = "#E2E2E2"
 
 const NavBar = () => {
   return (
@@ -29,7 +28,7 @@ const NavBar = () => {
         fontFamily="sans-serif"
         color="white"
       >
-        <Link p={navTexPad} _hover={{textUnderlineOffset: "none"}} href="/">
+        <Link p={navTexPad} _hover={{textUnderlineOffset: "none"}} href="/"> 
           Home
         </Link>
         <Link p={navTexPad} _hover={{textUnderlineOffset: "none"}} href="/htp">
