@@ -1,14 +1,16 @@
-import { Box, Button, Flex, Input } from "@chakra-ui/react";
+import { Box, Button, Flex, Input, Text } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { useState } from "react";
 
 const offWhite = "#E2E2E2";
 
-// type modelListTypes = {
-//   name: string;
-//   status: string;
-// }
+type modelListTypes = {
+  id: string;
+  name: string;
+  status: string;
+};
 
-const modelList = [
+const modelList: modelListTypes[] = [
   { id: "RGH", name: "Crossover (RGH) Floor", status: "Active" },
   { id: "ELU", name: "Elite Ultra Wall and Floor", status: "Active" },
   { id: "EFTU", name: "Elite Fire Tube Ultra", status: "Active" },
@@ -28,7 +30,7 @@ const modelList = [
   { id: "SSU", name: "Stainless Steel Superstor Ultra", status: "Active" },
   { id: "SSC", name: "Superstor Contender Titanium", status: "Active" },
   { id: "MSSU", name: "Superstor Ultra Max", status: "Active" },
-  
+
   { id: "CGH", name: "Crossover Commercial", status: "Discontinued" },
   { id: "EFTC", name: "EFT Combination Boiler", status: "Discontinued" },
   { id: "EL", name: "Elite Boiler", status: "Discontinued" },
@@ -37,19 +39,46 @@ const modelList = [
   { id: "EP-VHW", name: "Elite VWH", status: "Discontinued" },
   { id: "ETI", name: "Endurati Boiler", status: "Discontinued" },
   { id: "EV", name: "Everlast", status: "Discontinued" },
-  { id: "EVC", name: "Everlast Light Duty, Medium Duty Commercial Electric", status: "Discontinued" },
+  {
+    id: "EVC",
+    name: "Everlast Light Duty, Medium Duty Commercial Electric",
+    status: "Discontinued",
+  },
   { id: "RT", name: "Hydra Smart RT", status: "Discontinued" },
   { id: "RTC", name: "Hydra Smart RTC", status: "Discontinued" },
   { id: "MC", name: "MC Series", status: "Discontinued" },
-  { id: "ModCon", name: "ModCon Commercial Gas Boiler", status: "Discontinued" },
-  { id: "UFT", name: "UFT Boiler", status: "Discontinued" }, 
-  { id: "UFTC", name: "UFT Combi Boiler", status: "Discontinued" }, 
-  { id: "PHE", name: "Versa Hyrdo", status: "Discontinued" }, 
-  { id: "SSV", name: "Voyager", status: "Discontinued" }, 
-
+  {
+    id: "ModCon",
+    name: "ModCon Commercial Gas Boiler",
+    status: "Discontinued",
+  },
+  { id: "UFT", name: "UFT Boiler", status: "Discontinued" },
+  { id: "UFTC", name: "UFT Combi Boiler", status: "Discontinued" },
+  { id: "PHE", name: "Versa Hyrdo", status: "Discontinued" },
+  { id: "SSV", name: "Voyager", status: "Discontinued" },
 ];
 
 const HTP = () => {
+  const [inputText, setInput] = useState("");
+  const [result, setResult] = useState<modelListTypes[]>([
+    { id: "test", name: "test", status: "test" },
+  ]);
+
+  const modelInput = (e: { target: { value: string } }) => {
+    const text = e.target.value.toUpperCase();
+    setInput(text);
+  };
+
+  const handleSubmit = () => {
+    const filteredList = modelList.filter((item) => {
+      if (inputText === "") {
+        return;
+      }
+      return item.id === inputText;
+    });
+    setResult(filteredList);
+  };
+
   return (
     <Flex
       backgroundColor={offWhite}
@@ -65,10 +94,19 @@ const HTP = () => {
         border="1px solid black"
         m="20px"
         h="50px"
+        onChange={modelInput}
       />
-      <Button w="100px" mb="20px">
+      <Button w="100px" mb="20px" onClick={handleSubmit}>
         Search
       </Button>
+      {result[0].id !== "test" && result.map((item) => {
+        return (
+          <Text
+            m="10px"
+            key={item.id}
+          >{` ${item.id} - ${item.name} - ${item.status}`}</Text>
+        );
+      })}
       {/* <Tabs variant="soft-rounded" colorScheme="blue">
         <TabList>
           <Tab>Tab 1</Tab>
