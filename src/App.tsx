@@ -5,10 +5,9 @@ import { Box } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 
-
 function App() {
   return (
-    <Box h="94vh">
+    <Box h="100vh" overflow="scroll">
       <Router>
         <NavBar />
         <Routes>

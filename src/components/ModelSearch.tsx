@@ -1,4 +1,4 @@
-import { Box, Button, Input, Link, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Input, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { modelList, modelListTypes } from "../data/modelList";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
@@ -16,7 +16,7 @@ const ModelSearch = () => {
       if (inputText === "") {
         return;
       }
-      return item.id === inputText;
+      return item.id.includes(inputText);
     });
     setResult(filteredList);
   };
@@ -50,16 +50,24 @@ const ModelSearch = () => {
       {result.length === 0 && <Text fontSize="35px">No result found</Text>}
       {result.map((item) => {
         return (
-          <Box key={item.id}>
+          <Box key={item.name}>
             <Text
               fontSize="35px"
               m="20px 10px"
-            >{` ${item.id} - ${item.name} - ${item.status}`}</Text>
-            {item.link !== "" && (
-              <Link href={item.link} color={linkColor} fontSize="20" isExternal>
-                Model Links Page <ExternalLinkIcon mx="2px" />
-              </Link>
-            )}
+            >{` ${item.id} - ${item.name}`}</Text>
+            <Flex justifyContent="center" alignItems="center">
+              <Text mr="20px">{item.status}</Text>
+              {item.link !== "" && (
+                <Link
+                  href={item.link}
+                  color={linkColor}
+                  fontSize="20"
+                  isExternal
+                >
+                  Model Links Page <ExternalLinkIcon mx="2px" />
+                </Link>
+              )}
+            </Flex>
           </Box>
         );
       })}
