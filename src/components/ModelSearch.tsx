@@ -1,15 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Input,
-  Link,
-  Text,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-} from "@chakra-ui/react";
+import { Box, Button, Input, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { modelList, modelListTypes } from "../data/modelList";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
@@ -44,8 +33,7 @@ const ModelSearch = () => {
   };
 
   return (
-    <FormControl>
-      <FormLabel>Model Search</FormLabel>
+    <>
       <Input
         placeholder="Model"
         backgroundColor="white"
@@ -75,7 +63,7 @@ const ModelSearch = () => {
           </Box>
         );
       })}
-    </FormControl>
+    </>
   );
 };
 
