@@ -1,13 +1,5 @@
-import {
-  Box,
-  Flex,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-  Text,
-} from "@chakra-ui/react";
-import { offWhite } from "../globals";
+import { Box, Flex, Text } from "@chakra-ui/react";
+import { linkColor, offWhite } from "../globals";
 import React, { useState } from "react";
 import ToDo from "../components/HomeSwitchComps/ToDo";
 import GasValves from "../components/HomeSwitchComps/GasValves";
@@ -20,16 +12,16 @@ enum HomeSwitch {
 }
 
 const TextLinks: React.FC<{
-  resource: { id: string; name: string };
-  setHomeSwitch: (id: string) => void;
+  resource: { enum: string };
+  setHomeSwitch: any;
 }> = ({ resource, setHomeSwitch }) => {
   return (
     <Text
       mb="10px"
-      _hover={{ cursor: "pointer" }}
-      onClick={() => setHomeSwitch(resource.id)}
+      _hover={{ cursor: "pointer", color: linkColor }}
+      onClick={() => setHomeSwitch(resource.enum)}
     >
-      {resource.name}
+      {resource.enum}
     </Text>
   );
 };
@@ -38,9 +30,9 @@ const Home = () => {
   const [homeSwitch, setHomeSwitch] = useState("");
 
   const resourceData = [
-    { id: HomeSwitch.ToDo, name: "To Do" },
-    { id: HomeSwitch.GasValves, name: "Gas Valves" },
-    { id: HomeSwitch.Sensors, name: "Sensors" },
+    { enum: HomeSwitch.ToDo },
+    { enum: HomeSwitch.GasValves },
+    { enum: HomeSwitch.Sensors },
   ];
 
   const HomeSwitchController = (type: string) => {
@@ -59,7 +51,7 @@ const Home = () => {
       <Box w="300px" ml="75px" fontSize="20px">
         {resourceData.map((resource) => {
           return (
-            <Box key={resource.name}>
+            <Box key={resource.enum}>
               <TextLinks resource={resource} setHomeSwitch={setHomeSwitch} />
             </Box>
           );

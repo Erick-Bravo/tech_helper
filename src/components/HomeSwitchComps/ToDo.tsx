@@ -2,7 +2,7 @@
 
 const ToDo = () => {
   return (
-   <div>This is the To-Do component</div>
+   <div>Create New To Do</div>
   )
 }
 
