@@ -21,7 +21,7 @@ const ModelSearch = () => {
     setResult(filteredList);
   };
 
-  const modelInput = (event: any) => {
+  const modelInput = (event: { target: { value: string; }; }) => {
     const text = event.target.value.toUpperCase();
     setInput(text);
   };
@@ -38,7 +38,6 @@ const ModelSearch = () => {
         placeholder="Model"
         backgroundColor="white"
         w="500px"
-        border="1px solid black"
         m="20px"
         h="50px"
         onChange={modelInput}
@@ -48,7 +47,7 @@ const ModelSearch = () => {
         Search
       </Button>
       {result.length === 0 && <Text fontSize="35px">No result found</Text>}
-      {result.map((item) => {
+      {result[0].id !== "Model" && result.map((item) => {
         return (
           <Box key={item.name}>
             <Text
