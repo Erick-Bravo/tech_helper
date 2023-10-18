@@ -8,19 +8,40 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { offWhite } from "../globals";
-import { useState } from "react";
+import React, { useState } from "react";
 import ToDo from "../components/HomeSwitchComps/ToDo";
 import GasValves from "../components/HomeSwitchComps/GasValves";
 import Sensors from "../components/HomeSwitchComps/Sensors";
 
 enum HomeSwitch {
   ToDo = "To Do",
-  GasValves = "GasValves",
+  GasValves = "Gas Valves",
   Sensors = "Sensors",
 }
 
+const TextLinks: React.FC<{
+  resource: { id: string; name: string };
+  setHomeSwitch: (id: string) => void;
+}> = ({ resource, setHomeSwitch }) => {
+  return (
+    <Text
+      mb="10px"
+      _hover={{ cursor: "pointer" }}
+      onClick={() => setHomeSwitch(resource.id)}
+    >
+      {resource.name}
+    </Text>
+  );
+};
+
 const Home = () => {
   const [homeSwitch, setHomeSwitch] = useState("");
+
+  const resourceData = [
+    { id: HomeSwitch.ToDo, name: "To Do" },
+    { id: HomeSwitch.GasValves, name: "Gas Valves" },
+    { id: HomeSwitch.Sensors, name: "Sensors" },
+  ];
 
   const HomeSwitchController = (type: string) => {
     switch (type) {
@@ -36,27 +57,13 @@ const Home = () => {
   return (
     <Flex backgroundColor={offWhite} h="100%" p="40px 20px">
       <Box w="300px" ml="75px" fontSize="20px">
-        <Text
-          mb="10px"
-          _hover={{ cursor: "pointer" }}
-          onClick={() => setHomeSwitch(HomeSwitch.ToDo)}
-        >
-          To-Do
-        </Text>
-        <Text
-          mb="10px"
-          _hover={{ cursor: "pointer" }}
-          onClick={() => setHomeSwitch(HomeSwitch.GasValves)}
-        >
-          Gas Valves
-        </Text>
-        <Text
-          mb="10px"
-          _hover={{ cursor: "pointer" }}
-          onClick={() => setHomeSwitch(HomeSwitch.Sensors)}
-        >
-          Sensors
-        </Text>
+        {resourceData.map((resource) => {
+          return (
+            <Box key={resource.name}>
+              <TextLinks resource={resource} setHomeSwitch={setHomeSwitch} />
+            </Box>
+          );
+        })}
       </Box>
       <Box w="100%" border="2px solid black">
         {HomeSwitchController(homeSwitch)}
