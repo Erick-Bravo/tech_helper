@@ -1,30 +1,16 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { linkColor, offWhite } from "../globals";
 import React, { useState } from "react";
-import ToDo from "../components/HomeSwitchComps/ToDo";
-import GasValves from "../components/HomeSwitchComps/GasValves";
-import Sensors from "../components/HomeSwitchComps/Sensors";
+import ToDo from "../components/Links_Home/ToDo";
+import GasValves from "../components/Links_Home/GasValves";
+import Sensors from "../components/Links_Home/Sensors";
+import TextLinks from "../components/TextLinks";
 
 enum HomeSwitch {
   ToDo = "To Do",
   GasValves = "Gas Valves",
   Sensors = "Sensors",
 }
-
-const TextLinks: React.FC<{
-  resource: { enum: string };
-  setHomeSwitch: any;
-}> = ({ resource, setHomeSwitch }) => {
-  return (
-    <Text
-      mb="10px"
-      _hover={{ cursor: "pointer", color: linkColor }}
-      onClick={() => setHomeSwitch(resource.enum)}
-    >
-      {resource.enum}
-    </Text>
-  );
-};
 
 const Home = () => {
   const [homeSwitch, setHomeSwitch] = useState("");
