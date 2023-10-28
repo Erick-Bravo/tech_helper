@@ -10,9 +10,6 @@ const ModelSearch = () => {
     { id: "Model", name: "Name", status: "Status", link: "" },
   ]);
 
-  console.log(result)
-  console.log(result.length)
-
   const handleSubmit = () => {
     const filteredList = modelList.filter((item) => {
       if (inputText === "") {

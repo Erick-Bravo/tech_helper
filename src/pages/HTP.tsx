@@ -29,7 +29,7 @@ const HTP = () => {
 
   return (
     <Flex backgroundColor={offWhite} h="100%" p="40px 20px">
-      <Box w="300px" ml="75px" fontSize="20px">
+      <Box w="300px" ml="75px" fontSize="20px" >
         {resourceData.map((resource) => {
           return (
             <Box key={resource.enum}>
@@ -38,7 +38,7 @@ const HTP = () => {
           );
         })}
       </Box>
-      <Flex w="100%"  alignItems="center" flexDir="column">
+      <Flex w="100%"  alignItems="center" flexDir="column" mr="150px">
         {HTPSwitchController(htpSwitch)}
       </Flex>
     </Flex>
