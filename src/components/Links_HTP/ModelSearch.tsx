@@ -10,6 +10,9 @@ const ModelSearch = () => {
     { id: "Model", name: "Name", status: "Status", link: "" },
   ]);
 
+  console.log(result)
+  console.log(result.length)
+
   const handleSubmit = () => {
     const filteredList = modelList.filter((item) => {
       if (inputText === "") {
@@ -46,7 +49,7 @@ const ModelSearch = () => {
         Search
       </Button>
       {result.length === 0 && <Text fontSize="35px">No result found</Text>}
-      {result[0].id !== "Model" &&
+      {result.length !== 0 && result[0].id !== "Model" &&
         result.map((item) => {
           return (
             <Box key={item.name}>
