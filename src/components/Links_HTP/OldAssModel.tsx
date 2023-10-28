@@ -73,7 +73,7 @@ const OldAssModel = () => {
           onChange={monthInput}
           onKeyDown={handleMonthEnter}
         />
-        {month.length === 0 && <Text fontSize="35px">not found</Text>}
+        {month.length === 0 && <Text fontSize="15px">not found</Text>}
         {month.length !== 0 && month[0].month !== "Month" && (
           <Text fontSize="25px" m="20px 10px">
             {month[0].month}
@@ -90,7 +90,7 @@ const OldAssModel = () => {
           onChange={yearInput}
           onKeyDown={handleYearEnter}
         />
-        {year.length === 0 && <Text fontSize="35px">not found</Text>}
+        {year.length === 0 && <Text fontSize="15px">not found</Text>}
         {year.length !== 0 && year[0].year !== 0 && (
           <Text fontSize="25px" m="20px 10px">
             {year[0].year}
