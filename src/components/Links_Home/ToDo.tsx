@@ -9,88 +9,124 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { darkGray, secondary } from "../../globals";
 
 const ToDo = () => {
-  //For New To Do. Add to existing localHost data.
-  //Push to existing localGet
   const [name, setName] = useState("");
   const [ticket, setTicket] = useState("");
   const [description, setDescription] = useState("");
+  const [completed, setCompleted] = useState(false);
   const [toDoList, setToDoList] = useState<
-    { name: string; ticket: string; description: string }[]
+    { name: string; ticket: string; description: string; completed: boolean }[]
   >([]); //Note: type checking in useState was needed to prevent the "never[]" error.
 
   const localGet = localStorage.getItem("toDoList");
   useEffect(() => {
     if (localGet !== null) {
       setToDoList(JSON.parse(localGet));
-      console.log(toDoList);
     }
   }, []);
 
-  const newList: { name: string; ticket: string; description: string }[] = [
-    {
-      name,
-      ticket,
-      description,
-    },
-  ];
+  const newList: {
+    name: string;
+    ticket: string;
+    description: string;
+    completed: boolean;
+  } = {
+    name,
+    ticket,
+    description,
+    completed,
+  };
 
   const handleNewSubmit = () => {
-    const parsedList = JSON.stringify(newList);
-    localStorage.setItem("toDoList", parsedList);
+    const newArray = [newList, ...toDoList];
+    setToDoList(newArray);
+    const stringifyList = JSON.stringify(newArray);
+    localStorage.setItem("toDoList", stringifyList);
+    setName("");
+    setTicket("");
+    setDescription("");
   };
 
   return (
-    <Box>
-      <FormControl>
+    <Flex w="100%" flexDir="column" alignItems="center">
+      <FormControl w="400px">
+        <Text fontSize="25px" mb="15px">
+          Add a To-Do
+        </Text>
         <FormLabel>Name</FormLabel>
         <Input
           type="text"
-          w="300px"
           bg="white"
           onChange={(e) => setName(e.target.value)}
+          required
           value={name}
         />
         <FormLabel>Ticket</FormLabel>
         <Input
           type="number"
-          w="300px"
           bg="white"
           onChange={(e) => setTicket(e.target.value)}
           value={ticket}
         />
         <FormLabel>Description</FormLabel>
         <Textarea
-          w="300px"
           bg="white"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         />
       </FormControl>
 
-      <Button mt="30px" onClick={handleNewSubmit}>
+      <Button
+        mt="30px"
+        onClick={handleNewSubmit}
+        bg={secondary}
+        color="white"
+        size="sm"
+      >
         Submit
       </Button>
 
-      <Flex w="100%">
-        {toDoList.length > 0 ? (
-          toDoList.map((item, i) => {
-            return (
-              <Flex key={i} flexDir="column" ml="40px" mt="20px">
-                <Text fontSize="25px">{item.name}</Text>
-                <Text fontSize="25px">{item.ticket}</Text>
-                <Text fontSize="15px" mt="10px">
-                  {item.description}
-                </Text>
-              </Flex>
-            );
-          })
-        ) : (
-          <Box>Nothing on your list</Box>
-        )}
-      </Flex>
-    </Box>
+      <Box w="700px">
+        <Text fontSize="30px" fontWeight="bold" color={secondary} mt="60px">
+          To Do
+        </Text>
+        <Flex w="100%" flexDir="column">
+          {toDoList.length > 0 ? (
+            toDoList.map((item, i) => {
+              return (
+                <Flex key={i} flexDir="column" ml="40px" mt="20px" w="100%">
+                  <Text fontSize="25px">{item.name}</Text>
+                  <Text fontSize="25px">{item.ticket}</Text>
+                  <Text fontSize="15px" mt="10px">
+                    {item.description}
+                  </Text>
+                  <Flex justifyContent="flex-end">
+                    <Button
+                      size="sm"
+                      m="20px"
+                      w="100px"
+                      bg={secondary}
+                      color="white"
+                    >
+                      Completed
+                    </Button>
+                  </Flex>
+                </Flex>
+              );
+            })
+          ) : (
+            <Box>Nothing on your list</Box>
+          )}
+        </Flex>
+
+        <Text fontSize="30px" fontWeight="bold" color={secondary} mt="60px">
+          Completed
+        </Text>
+        <Flex></Flex>
+      </Box>
+    </Flex>
   );
 };
 

@@ -4,10 +4,11 @@ import HTP from "./pages/HTP";
 import { Box } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
+import { offWhite } from "./globals";
 
 function App() {
   return (
-    <Box h="100vh" overflow="scroll">
+    <Box height="100vh" overflow="scroll" bg={offWhite}>
       <Router>
         <NavBar />
         <Routes>

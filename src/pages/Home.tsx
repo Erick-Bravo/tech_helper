@@ -33,7 +33,7 @@ const Home = () => {
   };
 
   return (
-    <Flex backgroundColor={offWhite} h="100%" p="40px 20px">
+    <Flex p="40px 20px">
       <Box w="300px" ml="75px" fontSize="20px">
         {resourceData.map((resource) => {
           return (
@@ -43,9 +43,9 @@ const Home = () => {
           );
         })}
       </Box>
-      <Box w="100%" border="2px solid black">
+      <Flex w="1000px" justifyContent="center">
         {HomeSwitchController(homeSwitch)}
-      </Box>
+      </Flex>
     </Flex>
   );
 };

@@ -28,7 +28,7 @@ const HTP = () => {
   // };
 
   return (
-    <Flex backgroundColor={offWhite} h="100%" p="40px 20px">
+    <Flex h="100%" p="40px 20px">
       <Box w="300px" ml="75px" fontSize="20px" >
         {/* {resourceData.map((resource) => {
           return (

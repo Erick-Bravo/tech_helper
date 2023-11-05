@@ -1,7 +1,7 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
+import { darkGray } from "../globals";
 
 const navTexPad = "0 20px";
-const darkGray = "#474747"
 
 const NavBar = () => {
   return (
