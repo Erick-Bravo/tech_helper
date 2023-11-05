@@ -2,7 +2,7 @@ import { Box, Button, Flex, Input, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { modelList, modelListTypes } from "../../data/modelList";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { linkColor } from "../../globals";
+import { linkColor, secondary } from "../../globals";
 
 const ModelSearch = () => {
   const [inputText, setInput] = useState("");
@@ -33,20 +33,32 @@ const ModelSearch = () => {
 
   return (
     <>
-      <Input
-        placeholder="Model"
-        backgroundColor="white"
-        w="500px"
-        m="20px"
-        h="50px"
-        onChange={modelInput}
-        onKeyDown={handleEnter}
-      />
-      <Button w="100px" mb="20px" onClick={handleSubmit}>
-        Search
-      </Button>
+      <Flex flexDir="column">
+        <Input
+          placeholder="Model"
+          backgroundColor="white"
+          w="500px"
+          m="20px"
+          h="50px"
+          onChange={modelInput}
+          onKeyDown={handleEnter}
+        />
+        <Flex justifyContent="center">
+          <Button
+            w="100px"
+            h="30px"
+            mb="20px"
+            bg={secondary}
+            color="white"
+            onClick={handleSubmit}
+          >
+            Search
+          </Button>
+        </Flex>
+      </Flex>
       {result.length === 0 && <Text fontSize="35px">No result found</Text>}
-      {result.length !== 0 && result[0].id !== "Model" &&
+      {result.length !== 0 &&
+        result[0].id !== "Model" &&
         result.map((item) => {
           return (
             <Box key={item.name}>
