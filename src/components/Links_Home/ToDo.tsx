@@ -1,4 +1,4 @@
-import { FormControl, FormLabel, Input, Box, Button } from "@chakra-ui/react";
+import { FormControl, FormLabel, Input, Box, Button, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 
 const ToDo = () => {
@@ -8,8 +8,22 @@ const ToDo = () => {
   const [ticket, setTicket] = useState("");
   const [description, setDescription] = useState("");
 
-  // const localGet = JSON.parse(localStorage.getItem("toDoObject") || "")
+  // const localGet = localStorage.getItem("toDoObject")
   // console.log(localGet)
+  const toDoList: {name: string, ticket: string, description: string}[] = [
+    {
+      name,
+      ticket,
+      description,
+    },
+  ];
+
+  const handleSubmit = () => {
+    const parsedList = JSON.stringify(toDoList);
+    console.log(parsedList)
+    localStorage.setItem("toDoList", parsedList);
+  };
+
 
   return (
     <Box>
@@ -31,15 +45,15 @@ const ToDo = () => {
           value={ticket}
         />
         <FormLabel>Description</FormLabel>
-        <Input
-          type="text"
+        <Textarea
           w="300px"
+     
           bg="white"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         />
       </FormControl>
-      <Button mt="30px">Submit</Button>
+      <Button mt="30px" onClick={handleSubmit}>Submit</Button>
     </Box>
   );
 };

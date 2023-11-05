@@ -17,6 +17,14 @@ const OldAssModel = () => {
     { letter: "Year", year: 0 },
   ]);
 
+  // const revisionOutput = () => {
+    //Use year to determine revision, 
+    //if on a transition year, check month
+  //   if (year[0].year > 2008) {
+  //     return "Rev 2"
+  //   }
+  // };
+
   //Month
   const handleMonthSubmit = () => {
     const filteredList = oldAssMonthList.filter((item) => {
@@ -62,42 +70,45 @@ const OldAssModel = () => {
   };
 
   return (
-    <Flex>
-      <Flex flexDir="column" alignItems="center">
-        <Input
-          placeholder="Month"
-          backgroundColor="white"
-          w="100px"
-          m="20px"
-          h="50px"
-          onChange={monthInput}
-          onKeyDown={handleMonthEnter}
-        />
-        {month.length === 0 && <Text fontSize="15px">not found</Text>}
-        {month.length !== 0 && month[0].month !== "Month" && (
-          <Text fontSize="25px" m="20px 10px">
-            {month[0].month}
-          </Text>
-        )}
+    <>
+      <Flex>
+        <Flex flexDir="column" alignItems="center">
+          <Input
+            placeholder="Month"
+            backgroundColor="white"
+            w="100px"
+            m="20px"
+            h="50px"
+            onChange={monthInput}
+            onKeyDown={handleMonthEnter}
+          />
+          {month.length === 0 && <Text fontSize="15px">not found</Text>}
+          {month.length !== 0 && month[0].month !== "Month" && (
+            <Text fontSize="25px" m="20px 10px">
+              {month[0].month}
+            </Text>
+          )}
+        </Flex>
+        <Flex flexDir="column" alignItems="center">
+          <Input
+            placeholder="Year"
+            backgroundColor="white"
+            w="100px"
+            m="20px"
+            h="50px"
+            onChange={yearInput}
+            onKeyDown={handleYearEnter}
+          />
+          {year.length === 0 && <Text fontSize="15px">not found</Text>}
+          {year.length !== 0 && year[0].year !== 0 && (
+            <Text fontSize="25px" m="20px 10px">
+              {year[0].year}
+            </Text>
+          )}
+        </Flex>
       </Flex>
-      <Flex flexDir="column" alignItems="center">
-        <Input
-          placeholder="Year"
-          backgroundColor="white"
-          w="100px"
-          m="20px"
-          h="50px"
-          onChange={yearInput}
-          onKeyDown={handleYearEnter}
-        />
-        {year.length === 0 && <Text fontSize="15px">not found</Text>}
-        {year.length !== 0 && year[0].year !== 0 && (
-          <Text fontSize="25px" m="20px 10px">
-            {year[0].year}
-          </Text>
-        )}
-      </Flex>
-    </Flex>
+      <Text>Test</Text>
+    </>
   );
 };
 
