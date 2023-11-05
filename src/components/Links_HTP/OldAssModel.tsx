@@ -107,7 +107,6 @@ const OldAssModel = () => {
           )}
         </Flex>
       </Flex>
-      <Text>Test</Text>
     </>
   );
 };
