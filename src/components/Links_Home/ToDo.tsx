@@ -1,5 +1,12 @@
-import { FormControl, FormLabel, Input, Box, Button, Textarea } from "@chakra-ui/react";
-import { useState } from "react";
+import {
+  FormControl,
+  FormLabel,
+  Input,
+  Box,
+  Button,
+  Textarea,
+} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 const ToDo = () => {
   //For New To Do. Add to existing localHost data.
@@ -7,10 +14,20 @@ const ToDo = () => {
   const [name, setName] = useState("");
   const [ticket, setTicket] = useState("");
   const [description, setDescription] = useState("");
+  const [toDoList, setToDoList] = useState([]);
 
-  // const localGet = localStorage.getItem("toDoObject")
+  const localGet = localStorage.getItem("toDoList");
   // console.log(localGet)
-  const toDoList: {name: string, ticket: string, description: string}[] = [
+
+  useEffect(() => {
+    if (localGet !== null) {
+      setToDoList(JSON.parse(localGet));
+    }
+  }, []);
+
+  console.log(toDoList)
+
+  const newList: { name: string; ticket: string; description: string }[] = [
     {
       name,
       ticket,
@@ -18,12 +35,10 @@ const ToDo = () => {
     },
   ];
 
-  const handleSubmit = () => {
-    const parsedList = JSON.stringify(toDoList);
-    console.log(parsedList)
+  const handleNewSubmit = () => {
+    const parsedList = JSON.stringify(newList);
     localStorage.setItem("toDoList", parsedList);
   };
-
 
   return (
     <Box>
@@ -47,13 +62,14 @@ const ToDo = () => {
         <FormLabel>Description</FormLabel>
         <Textarea
           w="300px"
-     
           bg="white"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
         />
       </FormControl>
-      <Button mt="30px" onClick={handleSubmit}>Submit</Button>
+      <Button mt="30px" onClick={handleNewSubmit}>
+        Submit
+      </Button>
     </Box>
   );
 };
