@@ -16,8 +16,15 @@ const ToDo = () => {
   const [ticket, setTicket] = useState("");
   const [description, setDescription] = useState("");
   const [completed, setCompleted] = useState(false);
+  const [date, setDate] = useState(0);
   const [toDoList, setToDoList] = useState<
-    { name: string; ticket: string; description: string; completed: boolean }[]
+    {
+      name: string;
+      ticket: string;
+      description: string;
+      completed: boolean;
+      date: number;
+    }[]
   >([]); //Note: type checking in useState was needed to prevent the "never[]" error.
 
   const localGet = localStorage.getItem("toDoList");
@@ -32,11 +39,13 @@ const ToDo = () => {
     ticket: string;
     description: string;
     completed: boolean;
+    date: number;
   } = {
     name,
     ticket,
     description,
     completed,
+    date: Date.now(),
   };
 
   const handleNewSubmit = () => {
@@ -47,6 +56,14 @@ const ToDo = () => {
     setName("");
     setTicket("");
     setDescription("");
+    setDate(0);
+  };
+
+  const handleDelete = (date: number) => {
+    const filteredArray = toDoList.filter((item) => item.date !== date);
+    setToDoList(filteredArray);
+    const stringifyList = JSON.stringify(filteredArray);
+    localStorage.setItem("toDoList", stringifyList);
   };
 
   return (
@@ -89,7 +106,7 @@ const ToDo = () => {
       </Button>
 
       <Box w="700px">
-        <Text fontSize="30px" fontWeight="bold" color={secondary} mt="60px">
+        <Text fontSize="30px" fontWeight="bold" mt="60px">
           To Do
         </Text>
         <Flex w="100%" flexDir="column">
@@ -103,6 +120,9 @@ const ToDo = () => {
                     {item.description}
                   </Text>
                   <Flex justifyContent="flex-end">
+                    <Button size="sm" m="20px" w="100px" onClick={() => handleDelete(item.date)}>
+                      Delete
+                    </Button>
                     <Button
                       size="sm"
                       m="20px"
@@ -121,7 +141,7 @@ const ToDo = () => {
           )}
         </Flex>
 
-        <Text fontSize="30px" fontWeight="bold" color={secondary} mt="60px">
+        <Text fontSize="30px" fontWeight="bold" mt="60px">
           Completed
         </Text>
         <Flex></Flex>
