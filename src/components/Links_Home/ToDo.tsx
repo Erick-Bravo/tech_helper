@@ -15,8 +15,6 @@ const ToDo = () => {
   const [name, setName] = useState("");
   const [ticket, setTicket] = useState("");
   const [description, setDescription] = useState("");
-  const [completed, setCompleted] = useState(false);
-  const [date, setDate] = useState(0);
   const [toDoList, setToDoList] = useState<
     {
       name: string;
@@ -44,7 +42,7 @@ const ToDo = () => {
     name,
     ticket,
     description,
-    completed,
+    completed: false,
     date: Date.now(),
   };
 
@@ -56,7 +54,6 @@ const ToDo = () => {
     setName("");
     setTicket("");
     setDescription("");
-    setDate(0);
   };
 
   const handleDelete = (date: number) => {
@@ -65,6 +62,13 @@ const ToDo = () => {
     const stringifyList = JSON.stringify(filteredArray);
     localStorage.setItem("toDoList", stringifyList);
   };
+
+  const handleComplete = (date: number) => {
+    const filteredArray = toDoList.filter((item) => item.date === date);
+    const changedComplete = filteredArray[0]
+    const newItem = {...changedComplete, completed: true}
+    console.log(newItem)
+  }
 
   return (
     <Flex w="100%" flexDir="column" alignItems="center">
@@ -102,7 +106,7 @@ const ToDo = () => {
         color="white"
         size="sm"
       >
-        Submit
+        Add
       </Button>
 
       <Box w="700px">
@@ -129,6 +133,7 @@ const ToDo = () => {
                       w="100px"
                       bg={secondary}
                       color="white"
+                      onClick={() => handleComplete(item.date)}
                     >
                       Completed
                     </Button>
