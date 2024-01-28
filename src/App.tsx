@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Westinghouse from "./pages/Westinghouse";
-import HTP from "./pages/HTP";
+import HTP from "./pages/Search";
 import { Box } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
