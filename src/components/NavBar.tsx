@@ -32,13 +32,13 @@ const NavBar = () => {
         fontFamily="sans-serif"
         color="white"
       >
-        <Link p={navTexPad} _hover={{ textUnderlineOffset: "none" }} href={teamsLink}>
+        <Link p={navTexPad} _hover={{ textUnderlineOffset: "none" }} href="/">
           Home
         </Link>
         <Link
           p={navTexPad}
           _hover={{ textUnderlineOffset: "none" }}
-          href="/htp"
+          href={teamsLink}
         >
           Warranty Parts Shipping
         </Link>
