@@ -1,17 +1,15 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { linkColor, offWhite } from "../globals";
 import React, { useState } from "react";
-import ToDo from "../components/Links_Home/ToDo";
 import GasValves from "../components/Links_Home/GasValves";
 import Sensors from "../components/Links_Home/Sensors";
 import TextLinks from "../components/TextLinks";
 import Search from "./Search";
 
 enum HomeSwitch {
-  ToDo = "To Do",
   GasValves = "Gas Valves",
   Sensors = "Sensors",
-  ModelSearch = "Model Search"
+  ModelSearch = "Model Search",
 }
 
 const Home = () => {
@@ -19,9 +17,8 @@ const Home = () => {
 
   const resourceData = [
     { enum: HomeSwitch.ModelSearch },
-    { enum: HomeSwitch.ToDo },
     { enum: HomeSwitch.GasValves },
-    { enum: HomeSwitch.Sensors }
+    { enum: HomeSwitch.Sensors },
   ];
 
   const HomeSwitchController = (type: string) => {
@@ -30,8 +27,6 @@ const Home = () => {
         return <GasValves />;
       case HomeSwitch.Sensors:
         return <Sensors />;
-      case HomeSwitch.ToDo:
-        return <ToDo />;
       default:
         return <Search />;
     }
@@ -48,7 +43,7 @@ const Home = () => {
           );
         })}
       </Box>
-      <Flex w="100%" justifyContent="center">
+      <Flex w="100%" justifyContent="center" pr="12.5%">
         {HomeSwitchController(homeSwitch)}
       </Flex>
     </Flex>

@@ -5,6 +5,7 @@ import { Box } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import { offWhite } from "./globals";
+import ToDo from "./components/Links_Home/ToDo";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/westinghouse" element={<Westinghouse />} />
           <Route path="/htp" element={<HTP />} />
+          <Route path="/to-do" element={<ToDo />} />
         </Routes>
       </Router>
     </Box>

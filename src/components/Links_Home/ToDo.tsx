@@ -9,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { darkGray, secondary } from "../../globals";
+import { secondary } from "../../globals";
 
 const ToDo = () => {
   const [name, setName] = useState("");
@@ -71,7 +71,7 @@ const ToDo = () => {
   }
 
   return (
-    <Flex w="100%" flexDir="column" alignItems="center">
+    <Flex w="100%" flexDir="column" alignItems="center" mt="100px">
       <FormControl w="400px">
         <Text fontSize="25px" mb="15px">
           Add a To-Do
@@ -145,10 +145,6 @@ const ToDo = () => {
             <Box>Nothing on your list</Box>
           )}
         </Flex>
-
-        <Text fontSize="30px" fontWeight="bold" mt="60px">
-          Completed
-        </Text>
         <Flex></Flex>
       </Box>
     </Flex>
