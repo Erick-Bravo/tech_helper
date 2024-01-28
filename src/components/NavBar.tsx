@@ -9,7 +9,7 @@ const warrantyPartsID =
 const teamsWarrantyPartsLink = `msteams://teams.microsoft.com/l/file/${warrantyPartsID}`;
 
 const sitPartsID =
-  "https://aristonthermo.sharepoint.com/:x:/r/sites/AristoCustomerExperienceTeam-TechSupport/Documenti%20condivisi/Tech%20Support/SiT%20Programmer%20Software/SIT%20Part%20Files-9-27-2022.xlsx?d=waffffd07b2914887a1c421c6b8b12098&csf=1&web=1&e=BxSaX7";
+  "https://aristonthermo.sharepoint.com/:x:/r/sites/AristoCustomerExperienceTeam-TechSupport/Documenti%20condivisi/Tech%20Support/SiT%20Programmer%20Software/SIT%20Part%20Files-9-27-2022.xlsx";
 const teamsSITLink = `msteams://teams.microsoft.com/l/file/${sitPartsID}`;
 
 const NavBar = () => {
@@ -77,7 +77,7 @@ const NavBar = () => {
           cursor={loading ? "wait" : "pointer"}
         >
           SIT Program Files
-        </Link> */
+        </Link>
         <Box
           p={navTexPad}
           onClick={() => handleCurserLoading(teamsSITLink)}
