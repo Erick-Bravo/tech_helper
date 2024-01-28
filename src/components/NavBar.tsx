@@ -3,6 +3,10 @@ import { darkGray } from "../globals";
 
 const navTexPad = "0 20px";
 
+const excelFileId =
+  "https://aristonthermo.sharepoint.com/:x:/r/sites/USAWarrantyShipments-SAP/Documenti%20condivisi/General/Warranty%20Parts%20Shipping.xlsx?d=wdd52a2b1fbb145629b47a222ecc8ede3&csf=1&web=1&e=IwmqUj";
+const teamsLink = `msteams://teams.microsoft.com/l/file/${excelFileId}`;
+
 const NavBar = () => {
   return (
     <Flex
@@ -28,15 +32,19 @@ const NavBar = () => {
         fontFamily="sans-serif"
         color="white"
       >
-        <Link p={navTexPad} _hover={{textUnderlineOffset: "none"}} href="/"> 
+        <Link p={navTexPad} _hover={{ textUnderlineOffset: "none" }} href={teamsLink}>
           Home
         </Link>
-        <Link p={navTexPad} _hover={{textUnderlineOffset: "none"}} href="/htp">
-          HTP
+        <Link
+          p={navTexPad}
+          _hover={{ textUnderlineOffset: "none" }}
+          href="/htp"
+        >
+          Warranty Parts Shipping
         </Link>
-        <Link p={navTexPad} _hover={{textUnderlineOffset: "none"}} href="/westinghouse">
+        {/* <Link p={navTexPad} _hover={{textUnderlineOffset: "none"}} href="/westinghouse">
           Westingthouse
-        </Link>
+        </Link> */}
       </Flex>
     </Flex>
   );
