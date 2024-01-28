@@ -15,8 +15,10 @@ const teamsSITLink = `msteams://teams.microsoft.com/l/file/${sitPartsID}`;
 const NavBar = () => {
   const [loading, setLoading] = useState(false);
 
-  const handleCurserLoading = () => {
+  const handleCurserLoading = (link: string) => {
     setLoading(true);
+
+    window.open(link, "_blank");
 
     setTimeout(() => {
       setLoading(false);
@@ -50,7 +52,7 @@ const NavBar = () => {
         <Link p={navTexPad} _hover={{ textUnderlineOffset: "none" }} href="/">
           Home
         </Link>
-        <Link
+        {/* <Link
           p={navTexPad}
           _hover={{ textUnderlineOffset: "none" }}
           href={teamsWarrantyPartsLink}
@@ -67,7 +69,14 @@ const NavBar = () => {
           cursor={loading ? "wait" : "pointer"}
         >
           SIT Program Files
-        </Link>
+        </Link> */}
+        <Box
+          p={navTexPad}
+          onClick={() => handleCurserLoading(teamsSITLink)}
+          cursor={loading ? "wait" : "pointer"}
+        >
+          SIT Test
+        </Box>
       </Flex>
     </Flex>
   );
