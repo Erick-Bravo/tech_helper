@@ -6,10 +6,10 @@ const navTexPad = "0 20px";
 
 const warrantyPartsID =
   "https://aristonthermo.sharepoint.com/:x:/r/sites/USAWarrantyShipments-SAP/Documenti%20condivisi/General/Warranty%20Parts%20Shipping.xlsx?d=wdd52a2b1fbb145629b47a222ecc8ede3&csf=1&web=1&e=IwmqUj";
+const teamsWarrantyPartsLink = `msteams://teams.microsoft.com/l/file/${warrantyPartsID}`;
+
 const sitPartsID =
   "https://aristonthermo.sharepoint.com/:x:/r/sites/AristoCustomerExperienceTeam-TechSupport/Documenti%20condivisi/Tech%20Support/SiT%20Programmer%20Software/SIT%20Part%20Files-9-27-2022.xlsx?d=waffffd07b2914887a1c421c6b8b12098&csf=1&web=1&e=BxSaX7";
-
-const teamsWarrantyPartsLink = `msteams://teams.microsoft.com/l/file/${warrantyPartsID}`;
 const teamsSITLink = `msteams://teams.microsoft.com/l/file/${sitPartsID}`;
 
 const NavBar = () => {
@@ -70,6 +70,14 @@ const NavBar = () => {
         >
           SIT Program Files
         </Link> */}
+        <Link
+          p={navTexPad}
+          _hover={{ textUnderlineOffset: "none" }}
+          href={teamsSITLink}
+          cursor={loading ? "wait" : "pointer"}
+        >
+          SIT Program Files
+        </Link> */
         <Box
           p={navTexPad}
           onClick={() => handleCurserLoading(teamsSITLink)}
