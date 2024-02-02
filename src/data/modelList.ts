@@ -24,6 +24,12 @@ export const modelList: modelListTypes[] = [
     link: "https://htproducts.com/elite-ultra-documents.html",
   },
   {
+    id: "ELUD",
+    name: "Elite Ultra Duo",
+    status: status.Active,
+    link: "https://www.htproducts.com/eliteultraduo-documents.html",
+  },
+  {
     id: "EFTU",
     name: "Elite Fire Tube Ultra",
     status: status.Active,
@@ -228,10 +234,46 @@ export const modelList: modelListTypes[] = [
     link: "http://www.htproducts.com/mcseriesdocuments.html",
   },
   {
-    id: "ModCon",
-    name: "ModCon Commercial Gas Boiler",
+    id: "MODCON",
+    name: "Commercial Gas Boiler",
     status: status.Discontinued,
     link: "https://www.htproducts.com/modcon-dis.html",
+  },
+  {
+    id: "MODCON-VWH",
+    name: "Commercial Volume Water Heater",
+    status: status.Discontinued,
+    link: "https://www.htproducts.com/modcon-vwh-dis.html",
+  },
+  {
+    id: "MODCON-Double",
+    name: "Stacked Gas Boiler",
+    status: status.Discontinued,
+    link: "https://www.htproducts.com/modcon-ds-dis.html",
+  },
+  {
+    id: "MODCON-Double-VWH",
+    name: "Stacked Volume Water Heater",
+    status: status.Discontinued,
+    link: "https://www.htproducts.com/modcon-dsvwh-dis.html",
+  },
+  {
+    id: "MUNCHKIN Rev-2",
+    name: "80m-399m began 12/20/2006 - T50-T80M began 1/4/2007",
+    status: status.Discontinued,
+    link: "https://www.htproducts.com/literature/lp-185.pdf",
+  },
+  {
+    id: "MUNCHKIN Rev-1",
+    name: "began 11/11/2004",
+    status: status.Discontinued,
+    link: "https://www.htproducts.com/literature/lp-61.pdf",
+  },
+  {
+    id: "MUNCHKIN Pre-Rev",
+    name: "'Blinky board' ended/925 began 11/1/2002",
+    status: status.Discontinued,
+    link: "https://www.htproducts.com/literature/lp-61r.pdf",
   },
   {
     id: "UFT",
@@ -247,7 +289,7 @@ export const modelList: modelListTypes[] = [
   },
   {
     id: "PHE",
-    name: "Versa Hyrdo",
+    name: "Versa Hydro",
     status: status.Discontinued,
     link: "http://www.htproducts.com/versahydrodocuments-dis.html",
   },
