@@ -43,18 +43,6 @@ const ModelSearch = () => {
           onChange={modelInput}
           onKeyDown={handleEnter}
         />
-        <Flex justifyContent="center">
-          <Button
-            w="100px"
-            h="30px"
-            mb="20px"
-            bg={secondary}
-            color="white"
-            onClick={handleSubmit}
-          >
-            Search
-          </Button>
-        </Flex>
       </Flex>
       {result.length === 0 && <Text fontSize="35px">No result found</Text>}
       {result.length !== 0 &&
@@ -65,7 +53,7 @@ const ModelSearch = () => {
               <Text
                 fontSize="35px"
                 m="20px 10px"
-              >{` ${item.id} - ${item.name}`}</Text>
+              >{` ${item.id} : ${item.name}`}</Text>
               <Flex justifyContent="center" alignItems="center">
                 <Text mr="20px">{item.status}</Text>
                 {item.link !== "" && (
