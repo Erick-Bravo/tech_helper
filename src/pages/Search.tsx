@@ -1,8 +1,8 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import ModelSearch from "../components/Links_HTP/ModelSearch";
+import ModelSearch from "../components/Links_Home/ModelSearch";
 import { offWhite } from "../globals";
 import { useState } from "react";
-import OldAssModel from "../components/Links_HTP/OldAssModel";
+import OldAssModel from "../components/Links_Home/OldAssModel";
 import TextLinks from "../components/TextLinks";
 
 
