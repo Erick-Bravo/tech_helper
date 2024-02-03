@@ -1,8 +1,8 @@
 import { Box, Button, Flex, Input, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { modelList, modelListTypes } from "../../data/modelList";
+import { modelList, modelListTypes } from "../../../data/modelList";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { linkColor, secondary } from "../../globals";
+import { linkColor, secondary } from "../../../globals";
 
 const ModelSearch = () => {
   const [inputText, setInput] = useState("");

@@ -4,14 +4,14 @@ import React, { useState } from "react";
 import GasValves from "../components/Links_Home/GasValves";
 import Sensors from "../components/Links_Home/Sensors";
 import TextLinks from "../components/TextLinks";
-import Search from "./Search";
-import WiringDiagrams from "../components/Links_Home/WiringDiagrams";
+import Search from "../components/Links_Home/ModelSearch/ModelSearch";
+import WiringDiagrams from "../components/Links_Home/WiringDiagram/WiringInput";
 
 enum HomeSwitch {
   GasValves = "Gas Valves",
   Sensors = "Sensors",
   ModelSearch = "Model Search",
-  WiringDiagrams = "Wiring Diagrams"
+  WiringDiagrams = "Wiring Diagrams",
 }
 
 const Home = () => {

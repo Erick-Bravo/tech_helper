@@ -5,7 +5,7 @@ import {
   oldAssMonthTypes,
   oldAssYearList,
   oldAssYearTypes,
-} from "../../data/oldAssModelList";
+} from "../../../data/oldAssModelList";
 
 const OldAssModel = () => {
   const [monthInputText, setMonthInput] = useState("");
@@ -18,8 +18,8 @@ const OldAssModel = () => {
   ]);
 
   // const revisionOutput = () => {
-    //Use year to determine revision, 
-    //if on a transition year, check month
+  //Use year to determine revision,
+  //if on a transition year, check month
   //   if (year[0].year > 2008) {
   //     return "Rev 2"
   //   }
