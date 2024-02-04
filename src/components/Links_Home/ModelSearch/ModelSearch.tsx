@@ -1,5 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
-import ModelSearch from "./ModelInput";
+import ModelInput from "./ModelInput";
 import OldAssModel from "./OldAssInput";
 
 const Search = () => {
@@ -12,7 +12,7 @@ const Search = () => {
           Model Search
         </Text>
         <Text fontSize="15px">Input the letters of model (Example: "UFT")</Text>
-        <ModelSearch />
+        <ModelInput />
       </Flex>
     </Flex>
   );

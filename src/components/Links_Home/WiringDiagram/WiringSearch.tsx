@@ -26,7 +26,9 @@ const WiringDiagrams = () => {
   };
   return (
     <>
-      <Flex flexDir="column">
+      <Flex p="40px 0px" flexDir="column" justifyContent="center" alignItems="center">
+        <Text fontSize="25px">Wiring Diagram Search</Text>
+        <Text fontSize="15px">Input part number of wire harness</Text>
         <Input
           placeholder="Model"
           backgroundColor="white"

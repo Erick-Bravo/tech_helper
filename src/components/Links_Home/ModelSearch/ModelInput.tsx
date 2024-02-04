@@ -4,7 +4,7 @@ import { modelList, modelListTypes } from "../../../data/modelList";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { linkColor, secondary } from "../../../globals";
 
-const ModelSearch = () => {
+const ModelInput = () => {
   const [inputText, setInput] = useState("");
   const [result, setResult] = useState<modelListTypes[]>([
     { id: "Model", name: "Name", status: "Status", link: "" },
@@ -33,7 +33,7 @@ const ModelSearch = () => {
 
   return (
     <>
-      <Flex flexDir="column">
+      <Flex flexDir="column" pb="40px">
         <Input
           placeholder="Model"
           backgroundColor="white"
@@ -74,4 +74,4 @@ const ModelSearch = () => {
   );
 };
 
-export default ModelSearch;
+export default ModelInput;

@@ -1,3 +1,68 @@
-export const wiringList = {
-    "7000P-324": "thing",
-  };
+export const wiringData = {
+  "7100P-273": "./7100P-273.pdf",
+};
+
+/*  
+
+
+7100P-272: High Voltage
+All PH Models
+n 
+---------------------------------------------------------
+
+7100P-273: Low Voltage
+All PH Models
+
+PH130-119
+PH130-119S
+PH130-55
+PH130-55LP
+PH130-80
+PH130-80S
+
+PH160-119
+PH160-55
+PH160-80
+PH160-80LP
+
+PH199-119
+PH199-119LP
+PH199-119S
+
+PH199-55
+PH199-55LP
+PH199-55SA
+
+PH199-80
+PH199-80LP
+PH199-80S
+
+PHM130-100
+
+PHM130-80
+PHM130-80LP
+PHM199-100
+PHM199-80
+
+PH100-119
+PH100-55
+PH100-55LP
+PH100-80
+PH100-119LP
+PH100-80LP
+
+PH130-119LP
+PH130-80LP
+PH160-119LP
+PH160-55LP
+PH199-55SALP
+
+PHM130-100LP
+PHM199-100LP
+PHM199-80LP
+
+---------------------------------------
+
+
+
+*/
