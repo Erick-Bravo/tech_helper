@@ -1,17 +1,18 @@
 import { Box, Button, Flex, Input, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
+import { wiringData } from "../../../data/wiringList";
+import { linkColor } from "../../../globals";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 const WiringDiagrams = () => {
   const [inputText, setInput] = useState("");
+  const [result, setResult] = useState("-");
+  console.log(result ? result : "no");
 
   const handleSubmit = () => {
-    // const filteredList = modelList.filter((item) => {
-    //   if (inputText === "") {
-    //     return;
-    //   }
-    //   return item.id.includes(inputText);
-    // });
-    // setResult(filteredList);
+    if (inputText === "") setResult("");
+    const pdfFound = wiringData[inputText];
+    setResult(pdfFound ? pdfFound : "");
   };
 
   const modelInput = (event: { target: { value: string } }) => {
@@ -25,21 +26,30 @@ const WiringDiagrams = () => {
     }
   };
   return (
-    <>
-      <Flex p="40px 0px" flexDir="column" justifyContent="center" alignItems="center">
-        <Text fontSize="25px">Wiring Diagram Search</Text>
-        <Text fontSize="15px">Input part number of wire harness</Text>
-        <Input
-          placeholder="Model"
-          backgroundColor="white"
-          w="500px"
-          m="20px"
-          h="50px"
-          onChange={modelInput}
-          onKeyDown={handleEnter}
-        />
-      </Flex>
-    </>
+    <Flex
+      p="40px 0px"
+      flexDir="column"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Text fontSize="25px">Wiring Diagram Search</Text>
+      <Text fontSize="15px">Input part number of wire harness</Text>
+      <Input
+        placeholder="Model"
+        backgroundColor="white"
+        w="500px"
+        m="20px"
+        h="50px"
+        onChange={modelInput}
+        onKeyDown={handleEnter}
+      />
+      {result === "" && <Text fontSize="35px">No result found</Text>}
+      {result !== "-" && result.length !== 0 && (
+        <Flex justifyContent="center" alignItems="center">
+           <Text>{result}</Text>
+        </Flex>
+      ) }
+    </Flex>
   );
 };
 

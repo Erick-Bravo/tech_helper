@@ -1,4 +1,4 @@
-export const wiringData = {
+export const wiringData: { [key: string]: string } = {
   "7100P-273": "./7100P-273.pdf",
 };
 
