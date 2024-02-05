@@ -7,7 +7,6 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 const WiringDiagrams = () => {
   const [inputText, setInput] = useState("");
   const [result, setResult] = useState("-");
-  console.log(result ? result : "no");
 
   const handleSubmit = () => {
     if (inputText === "") setResult("");
@@ -46,9 +45,11 @@ const WiringDiagrams = () => {
       {result === "" && <Text fontSize="35px">No result found</Text>}
       {result !== "-" && result.length !== 0 && (
         <Flex justifyContent="center" alignItems="center">
-           <Text>{result}</Text>
+          <Link href={result} color={linkColor} fontSize="20" isExternal>
+            Wiring Diagram <ExternalLinkIcon mx="2px" />
+          </Link>
         </Flex>
-      ) }
+      )}
     </Flex>
   );
 };

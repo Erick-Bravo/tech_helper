@@ -6,8 +6,11 @@ import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import { offWhite } from "./globals";
 import ToDo from "./components/Links_Home/ToDo";
+import { useEffect } from "react";
 
 function App() {
+
+
   return (
     <Box height="100vh" overflow="scroll" bg={offWhite}>
       <Router>
