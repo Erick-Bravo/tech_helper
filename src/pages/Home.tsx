@@ -4,12 +4,14 @@ import React, { useState } from "react";
 import GasValves from "../components/Links_Home/GasValves";
 import Sensors from "../components/Links_Home/Sensors";
 import TextLinks from "../components/TextLinks";
-import Search from "./Search";
+import Search from "../components/Links_Home/ModelSearch/ModelSearch";
+import WiringDiagrams from "../components/Links_Home/WiringDiagram/WiringSearch";
 
 enum HomeSwitch {
   GasValves = "Gas Valves",
   Sensors = "Sensors",
   ModelSearch = "Model Search",
+  WiringDiagrams = "Wiring Diagrams",
 }
 
 const Home = () => {
@@ -17,16 +19,15 @@ const Home = () => {
 
   const resourceData = [
     { enum: HomeSwitch.ModelSearch },
-    { enum: HomeSwitch.GasValves },
-    { enum: HomeSwitch.Sensors },
+    { enum: HomeSwitch.WiringDiagrams },
   ];
 
   const HomeSwitchController = (type: string) => {
     switch (type) {
       case HomeSwitch.GasValves:
         return <GasValves />;
-      case HomeSwitch.Sensors:
-        return <Sensors />;
+      case HomeSwitch.WiringDiagrams:
+        return <WiringDiagrams />;
       default:
         return <Search />;
     }

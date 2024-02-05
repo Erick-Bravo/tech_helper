@@ -27,8 +27,8 @@ const NavBar = () => {
     <Flex
       w="100%"
       p="0 100px"
-      h="50px"
-      backgroundColor={darkGray}
+      h="70px"
+      backgroundColor="black"
       justifyContent="space-between"
       alignItems="center"
       borderBottom="2px"
