@@ -19,15 +19,15 @@ const Home = () => {
 
   const resourceData = [
     { enum: HomeSwitch.ModelSearch },
-    { enum: HomeSwitch.WiringDiagrams },
+    // { enum: HomeSwitch.WiringDiagrams },
   ];
 
   const HomeSwitchController = (type: string) => {
     switch (type) {
       case HomeSwitch.GasValves:
         return <GasValves />;
-      case HomeSwitch.WiringDiagrams:
-        return <WiringDiagrams />;
+      // case HomeSwitch.WiringDiagrams:
+      //   return <WiringDiagrams />;
       default:
         return <Search />;
     }
