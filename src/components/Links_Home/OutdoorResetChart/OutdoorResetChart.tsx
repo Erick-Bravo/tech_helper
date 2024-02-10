@@ -93,7 +93,10 @@ const OutdoorResetChart = () => {
         <Text fontWeight="bold" m="5px 0 10px">
           Min Supply Temp
         </Text>
-        <MinSupplySlider />
+        <MinSupplySlider
+          minSupplyTemp={minSupplyTemp}
+          setMinSupplyTemp={setMinSupplyTemp}
+        />
       </Flex>
     </Box>
   );

@@ -6,10 +6,8 @@ import {
   SliderMark,
   Box,
 } from "@chakra-ui/react";
-import { useState } from "react";
 
-const MinSupplySlider = () => {
-  const [sliderValue, setSliderValue] = useState(86);
+const MinSupplySlider = ({minSupplyTemp, setMinSupplyTemp}: any) => {
 
   const labelStyles = {
     mt: "2",
@@ -21,11 +19,11 @@ const MinSupplySlider = () => {
     <Box p={4} pt={6} w="60%">
       <SliderChakra
         aria-label="slider-ex-6"
-        onChange={(val) => setSliderValue(val)}
+        onChange={(val) => setMinSupplyTemp(val)}
         min={30}
         max={200}
-        value={sliderValue}
-        defaultValue={sliderValue}
+        value={minSupplyTemp}
+        defaultValue={minSupplyTemp}
       >
         <SliderMark value={40} {...labelStyles}>
           40°
@@ -52,7 +50,7 @@ const MinSupplySlider = () => {
           180°
         </SliderMark>
         <SliderMark
-          value={sliderValue}
+          value={minSupplyTemp}
           textAlign="center"
           bg="blue.500"
           color="white"
@@ -60,7 +58,7 @@ const MinSupplySlider = () => {
           ml="-5"
           w="12"
         >
-          {sliderValue}°
+          {minSupplyTemp}°
         </SliderMark>
         <SliderTrack>
           <SliderFilledTrack />
