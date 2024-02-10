@@ -9,7 +9,7 @@ import {
 import { useState } from "react";
 
 const MinODSlider = () => {
-  const [sliderValue, setSliderValue] = useState(50);
+  const [sliderValue, setSliderValue] = useState(5);
 
   const labelStyles = {
     mt: "2",
@@ -22,15 +22,28 @@ const MinODSlider = () => {
       <SliderChakra
         aria-label="slider-ex-6"
         onChange={(val) => setSliderValue(val)}
+        min={-30}
+        max={90}
+        value={sliderValue}
+        defaultValue={sliderValue}
       >
-        <SliderMark value={25} {...labelStyles}>
-          25°
+        <SliderMark value={-20} {...labelStyles}>
+          -20°
         </SliderMark>
-        <SliderMark value={50} {...labelStyles}>
-          50°
+        <SliderMark value={0} {...labelStyles}>
+          0°
         </SliderMark>
-        <SliderMark value={75} {...labelStyles}>
-          75°
+        <SliderMark value={20} {...labelStyles}>
+          20°
+        </SliderMark>
+        <SliderMark value={40} {...labelStyles}>
+          40°
+        </SliderMark>
+        <SliderMark value={60} {...labelStyles}>
+          60°
+        </SliderMark>
+        <SliderMark value={80} {...labelStyles}>
+          80°
         </SliderMark>
         <SliderMark
           value={sliderValue}
