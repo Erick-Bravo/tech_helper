@@ -82,7 +82,7 @@ const OutdoorResetChart = () => {
         <Text fontWeight="bold" m="5px 0 10px">
           Min Outdoor Temp
         </Text>
-        <MinODSlider />
+        <MinODSlider minODTemp={minODTemp} setMinODTemp={setMinODTemp} />
         <Text fontWeight="bold" m="5px 0 10px">
           Max Supply Temp
         </Text>
