@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import {Chart as ChartJS, registerables, CategoryScale, LinearScale, PointElement, LineElement, Title} from 'chart.js';
 import { Line } from "react-chartjs-2";
+import Slider from "../../Slider";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title);
 
 const OutdoorResetChart = () => {
@@ -54,6 +55,7 @@ const OutdoorResetChart = () => {
   return (
     <Box w="70%" h="500px">
       <Line data={data} options={options} />
+      <Slider />
     </Box>
   );
 };
