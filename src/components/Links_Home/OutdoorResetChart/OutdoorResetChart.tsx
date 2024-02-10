@@ -17,9 +17,15 @@ import MinSupplySlider from "./Sliders/MinSupplySlider";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title);
 
 const OutdoorResetChart = () => {
+  const [maxODTemp, setMaxODTemp] = useState(68);
+  const [minODTemp, setMinODTemp] = useState(5);
+  const [maxSupplyTemp, setMaxSupplyTemp] = useState(180);
+  const [minSupplyTemp, setMinSupplyTemp] = useState(86);
   // Individual points for the graph
-  const point1 = { x: 30, y: 50 }; // Example values
-  const point2 = { x: 70, y: 80 }; // Example values
+  const point1 = { x: 0, y: maxSupplyTemp }; 
+  const point2 = { x: minODTemp, y: maxSupplyTemp }; 
+  const point3 = { x: maxODTemp, y: minSupplyTemp }; 
+  const point4 = { x: maxODTemp, y: 0 }; 
 
   const xLabels = [-30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90];
 
@@ -29,7 +35,7 @@ const OutdoorResetChart = () => {
     datasets: [
       {
         label: "Outdoor Reset Curve",
-        data: [point1, point2],
+        data: [point1, point2, point3, point4],
         fill: false,
         borderColor: "blue",
         showLine: true, // Display lines between points
@@ -43,12 +49,14 @@ const OutdoorResetChart = () => {
   const options: any = {
     scales: {
       x: {
-        type: "category",
+        type: "linear",
         title: {
           display: true,
           text: "Outdoor Temperature",
         },
       },
+      min: -30,
+      max: 90,
       y: {
         title: {
           display: true,
@@ -70,7 +78,7 @@ const OutdoorResetChart = () => {
         <Text fontWeight="bold" m="25px 0 10px">
           Max Outdoor Temp
         </Text>
-        <MaxODSlider />
+        <MaxODSlider maxODTemp={maxODTemp} setMaxODTemp={setMaxODTemp}/>
         <Text fontWeight="bold" m="5px 0 10px">
           Min Outdoor Temp
         </Text>
