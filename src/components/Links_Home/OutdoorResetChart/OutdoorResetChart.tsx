@@ -22,10 +22,10 @@ const OutdoorResetChart = () => {
   const [maxSupplyTemp, setMaxSupplyTemp] = useState(180);
   const [minSupplyTemp, setMinSupplyTemp] = useState(86);
   // Individual points for the graph
-  const point1 = { x: 0, y: maxSupplyTemp };
+  const point1 = { x: -40, y: maxSupplyTemp };
   const point2 = { x: minODTemp, y: maxSupplyTemp };
   const point3 = { x: maxODTemp, y: minSupplyTemp };
-  const point4 = { x: maxODTemp, y: 0 };
+  const point4 = { x: maxODTemp, y: 20 };
 
   const xLabels = [-30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90];
 
@@ -37,7 +37,7 @@ const OutdoorResetChart = () => {
         label: "Outdoor Reset Curve",
         data: [point1, point2, point3, point4],
         fill: false,
-        borderColor: "blue",
+        borderColor: "#3182ce",
         showLine: true, // Display lines between points
         pointRadius: 6, // Adjust the size of the points
         pointBackgroundColor: "red", // Customize the color of the points
@@ -54,9 +54,9 @@ const OutdoorResetChart = () => {
           display: true,
           text: "Outdoor Temperature",
         },
+        min: -30,
+        max: 90,
       },
-      min: -30,
-      max: 90,
       y: {
         title: {
           display: true,
