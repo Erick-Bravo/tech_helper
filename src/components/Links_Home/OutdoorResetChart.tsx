@@ -5,37 +5,33 @@ import { Line } from "react-chartjs-2";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title);
 
 const OutdoorResetChart = () => {
-  const [curveValues, setCurveValues] = useState<number[]>([
-    0
-  ]);
-  const outdoorTemps = [
-    80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200,
-  ];
+  // Individual points for the graph
+  const point1 = { x: 30, y: 50 }; // Example values
+  const point2 = { x: 70, y: 80 }; // Example values
 
-  // Function to update the curve values
-  const updateCurveValues = (index: number, value: number) => {
-    const newCurveValues = [...curveValues];
-    newCurveValues[index] = value;
-    setCurveValues(newCurveValues);
-  };
+  const xLabels = [-30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90]
 
-  // Chart data
+  // Chart data with individual points
   const data = {
-    labels: outdoorTemps.map(String),
+    labels: xLabels,
     datasets: [
       {
-        label: "Outdoor Reset Curve",
-        data: curveValues,
+        label: 'Outdoor Reset Curve',
+        data: [point1, point2],
         fill: false,
-        borderColor: "blue",
+        borderColor: 'blue',
+        showLine: true, // Display lines between points
+        pointRadius: 6, // Adjust the size of the points
+        pointBackgroundColor: 'red', // Customize the color of the points
       },
     ],
   };
 
   // Chart options
-  const options = {
+  const options: any = {
     scales: {
       x: {
+        type: 'category',
         title: {
           display: true,
           text: 'Outdoor Temperature',
@@ -44,28 +40,20 @@ const OutdoorResetChart = () => {
       y: {
         title: {
           display: true,
-          text: 'Boiler Water Temperature',
+          text: 'Supply Temperature',
         },
+        min: 30,
+        max: 200,
       },
     },
+    maintainAspectRatio: false,
+    responsive: true,
+    aspectRatio: 1,
   };
 
   return (
-    <Box w="80%">
+    <Box w="70%" h="500px">
       <Line data={data} options={options} />
-      {/* Render input controls for adjusting curve values */}
-      {curveValues.map((value, index) => (
-        <Box key={index}>
-          <label>{`Point ${index + 1}: `}</label>
-          <input
-            type="number"
-            value={value}
-            onChange={(e) =>
-              updateCurveValues(index, parseFloat(e.target.value))
-            }
-          />
-        </Box>
-      ))}
     </Box>
   );
 };
