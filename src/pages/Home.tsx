@@ -1,17 +1,14 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { linkColor, offWhite } from "../globals";
 import React, { useState } from "react";
-import GasValves from "../components/Links_Home/GasValves";
-import Sensors from "../components/Links_Home/Sensors";
 import TextLinks from "../components/TextLinks";
 import Search from "../components/Links_Home/ModelSearch/ModelSearch";
-import WiringDiagrams from "../components/Links_Home/WiringDiagram/WiringSearch";
+import OutdoorResetChart from "../components/Links_Home/OutdoorResetChart/OutdoorResetChart";
 
 enum HomeSwitch {
-  GasValves = "Gas Valves",
-  Sensors = "Sensors",
   ModelSearch = "Model Search",
   WiringDiagrams = "Wiring Diagrams",
+  ODResetChart = "OD Reset Curve",
 }
 
 const Home = () => {
@@ -19,13 +16,13 @@ const Home = () => {
 
   const resourceData = [
     { enum: HomeSwitch.ModelSearch },
-    // { enum: HomeSwitch.WiringDiagrams },
+    { enum: HomeSwitch.ODResetChart },
   ];
 
   const HomeSwitchController = (type: string) => {
     switch (type) {
-      case HomeSwitch.GasValves:
-        return <GasValves />;
+      case HomeSwitch.ODResetChart:
+        return <OutdoorResetChart />;
       // case HomeSwitch.WiringDiagrams:
       //   return <WiringDiagrams />;
       default:
