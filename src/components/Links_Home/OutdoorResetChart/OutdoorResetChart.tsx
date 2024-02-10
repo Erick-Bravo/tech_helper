@@ -22,10 +22,10 @@ const OutdoorResetChart = () => {
   const [maxSupplyTemp, setMaxSupplyTemp] = useState(180);
   const [minSupplyTemp, setMinSupplyTemp] = useState(86);
   // Individual points for the graph
-  const point1 = { x: 0, y: maxSupplyTemp }; 
-  const point2 = { x: minODTemp, y: maxSupplyTemp }; 
-  const point3 = { x: maxODTemp, y: minSupplyTemp }; 
-  const point4 = { x: maxODTemp, y: 0 }; 
+  const point1 = { x: 0, y: maxSupplyTemp };
+  const point2 = { x: minODTemp, y: maxSupplyTemp };
+  const point3 = { x: maxODTemp, y: minSupplyTemp };
+  const point4 = { x: maxODTemp, y: 0 };
 
   const xLabels = [-30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90];
 
@@ -78,7 +78,7 @@ const OutdoorResetChart = () => {
         <Text fontWeight="bold" m="25px 0 10px">
           Max Outdoor Temp
         </Text>
-        <MaxODSlider maxODTemp={maxODTemp} setMaxODTemp={setMaxODTemp}/>
+        <MaxODSlider maxODTemp={maxODTemp} setMaxODTemp={setMaxODTemp} />
         <Text fontWeight="bold" m="5px 0 10px">
           Min Outdoor Temp
         </Text>
@@ -86,7 +86,10 @@ const OutdoorResetChart = () => {
         <Text fontWeight="bold" m="5px 0 10px">
           Max Supply Temp
         </Text>
-        <MaxSupplySlider />
+        <MaxSupplySlider
+          maxSupplyTemp={maxSupplyTemp}
+          setMaxSupplyTemp={setMaxSupplyTemp}
+        />
         <Text fontWeight="bold" m="5px 0 10px">
           Min Supply Temp
         </Text>

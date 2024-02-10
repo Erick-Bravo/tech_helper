@@ -6,10 +6,8 @@ import {
   SliderMark,
   Box,
 } from "@chakra-ui/react";
-import { useState } from "react";
 
-const MaxSupplySlider = () => {
-  const [sliderValue, setSliderValue] = useState(180);
+const MaxSupplySlider = ({maxSupplyTemp, setMaxSupplyTemp}: any) => {
 
   const labelStyles = {
     mt: "2",
@@ -21,11 +19,11 @@ const MaxSupplySlider = () => {
     <Box p={4} pt={6} w="60%">
       <SliderChakra
         aria-label="slider-ex-6"
-        onChange={(val) => setSliderValue(val)}
+        onChange={(val) => setMaxSupplyTemp(val)}
         min={30}
         max={200}
-        value={sliderValue}
-        defaultValue={sliderValue}
+        value={maxSupplyTemp}
+        defaultValue={maxSupplyTemp}
       >
         <SliderMark value={40} {...labelStyles}>
           40°
@@ -52,7 +50,7 @@ const MaxSupplySlider = () => {
           180°
         </SliderMark>
         <SliderMark
-          value={sliderValue}
+          value={maxSupplyTemp}
           textAlign="center"
           bg="blue.500"
           color="white"
@@ -60,7 +58,7 @@ const MaxSupplySlider = () => {
           ml="-5"
           w="12"
         >
-          {sliderValue}°
+          {maxSupplyTemp}°
         </SliderMark>
         <SliderTrack>
           <SliderFilledTrack />
