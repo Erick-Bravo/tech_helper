@@ -13,7 +13,7 @@ const ModelInput = () => {
   const handleSubmit = () => {
     const filteredList = modelList.filter((item) => {
       if (inputText === "") {
-        return;
+        return
       }
       return item.id.includes(inputText);
     });

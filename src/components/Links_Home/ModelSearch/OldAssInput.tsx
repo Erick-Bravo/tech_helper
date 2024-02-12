@@ -66,6 +66,7 @@ const OldAssModel = () => {
   const handleYearEnter = (event: { key: string }) => {
     if (event.key === "Enter") {
       handleYearSubmit();
+      handleMonthSubmit()
     }
   };
 
