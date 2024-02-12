@@ -61,9 +61,9 @@ const NavBar = () => {
         {/* <Link p={navTexPad} _hover={{ textUnderlineOffset: "none" }} href="/">
           Warranty Parts Shipping
         </Link> */}
-        <Link p={navTexPad} _hover={{ textUnderlineOffset: "none" }} href="/">
+        {/* <Link p={navTexPad} _hover={{ textUnderlineOffset: "none" }} href="/">
           TechSupport AI
-        </Link>
+        </Link> */}
       </Flex>
     </Flex>
   );

@@ -127,7 +127,7 @@ const ToDo = () => {
                     <Button size="sm" m="20px" w="100px" onClick={() => handleDelete(item.date)}>
                       Delete
                     </Button>
-                    <Button
+                    {/* <Button
                       size="sm"
                       m="20px"
                       w="100px"
@@ -136,7 +136,7 @@ const ToDo = () => {
                       onClick={() => handleComplete(item.date)}
                     >
                       Completed
-                    </Button>
+                    </Button> */}
                   </Flex>
                 </Flex>
               );
