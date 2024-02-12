@@ -1,9 +1,9 @@
 import { Box, Flex, Link } from "@chakra-ui/react";
-import Search from "../components/Links_Home/ModelSearch/ModelSearch";
 import { linkColor } from "../globals";
 import { SideBarData } from "../data/sideBarData";
+import OutdoorResetChart from "../components/Links_Home/OutdoorResetChart/OutdoorResetChart";
 
-const Home = () => {
+const ODResetChart = () => {
   return (
     <Flex p="40px 20px">
       <Box w="200px" ml="75px" fontSize="20px">
@@ -21,10 +21,10 @@ const Home = () => {
         })}
       </Box>
       <Flex w="100%" justifyContent="center" pr="12.5%">
-        <Search />
+        <OutdoorResetChart />
       </Flex>
     </Flex>
   );
 };
 
-export default Home;
+export default ODResetChart;

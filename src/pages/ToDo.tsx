@@ -9,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { secondary } from "../../globals";
+import { secondary } from "../globals";
 
 const ToDo = () => {
   const [name, setName] = useState("");
@@ -63,12 +63,6 @@ const ToDo = () => {
     localStorage.setItem("toDoList", stringifyList);
   };
 
-  const handleComplete = (date: number) => {
-    const filteredArray = toDoList.filter((item) => item.date === date);
-    const changedComplete = filteredArray[0]
-    const newItem = {...changedComplete, completed: true}
-    console.log(newItem)
-  }
 
   return (
     <Flex w="100%" flexDir="column" alignItems="center" mt="100px">
@@ -124,7 +118,12 @@ const ToDo = () => {
                     {item.description}
                   </Text>
                   <Flex justifyContent="flex-end">
-                    <Button size="sm" m="20px" w="100px" onClick={() => handleDelete(item.date)}>
+                    <Button
+                      size="sm"
+                      m="20px"
+                      w="100px"
+                      onClick={() => handleDelete(item.date)}
+                    >
                       Delete
                     </Button>
                     {/* <Button
