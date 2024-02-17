@@ -56,6 +56,9 @@ const OutdoorResetChart = () => {
         },
         min: -30,
         max: 90,
+        ticks: {
+          stepSize: 1,
+        },
       },
       y: {
         title: {
@@ -69,6 +72,22 @@ const OutdoorResetChart = () => {
     maintainAspectRatio: false,
     responsive: true,
     aspectRatio: 1,
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context: any) {
+            console.log(context);
+            
+            if (context.tooltip.dataPoints) {
+              const xValue = context.tooltip.dataPoints[0].parsed.x;
+              const yValue = context.tooltip.dataPoints[0].parsed.y;
+              return `(${xValue}, ${yValue})`;
+            }
+            return "";
+          },
+        },
+      },
+    },
   };
 
   return (
