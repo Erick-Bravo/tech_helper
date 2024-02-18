@@ -30,7 +30,7 @@ const ZoneText: React.FC<{ text: string; timeZone: string }> = ({
   return (
     <Box>
       <Text fontWeight="bold">{text}</Text>
-      <Text fontWeight="bold" fontSize="20px" color="#555555">
+      <Text fontWeight="bold" fontSize="20px" color="#444444">
         {currentTime}
       </Text>
     </Box>
