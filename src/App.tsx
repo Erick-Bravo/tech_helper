@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import { offWhite } from "./globals";
 import ToDo from "./pages/ToDo";
 import ODResetChart from "./pages/ODResetChart";
+import SAP from "./pages/SAP";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/od-reset-curve" element={<ODResetChart />} />
           <Route path="/to-do" element={<ToDo />} />
+          <Route path="/sap-video-training" element={<SAP />} />
         </Routes>
       </Router>
     </Box>
