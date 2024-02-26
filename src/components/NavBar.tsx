@@ -19,9 +19,11 @@ const NavBar = () => {
         color="white"
       >
         <Flex justifyContent="flex-start">
-          <Text p="0 20px" fontSize="25px" fontWeight="bold">
-            Tech Helper
-          </Text>
+          <Link href="/" _hover={{ textDecor: "none" }}>
+            <Text p="0 20px" fontSize="25px" fontWeight="bold">
+              Tech Helper
+            </Text>
+          </Link>
         </Flex>
         <Flex
           justifyContent="center"
