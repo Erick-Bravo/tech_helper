@@ -84,18 +84,6 @@ export const modelList: modelListTypes[] = [
     link: "https://www.htproducts.com/EVG-documents.html",
   },
   {
-    id: "GL",
-    name: "Glass Lined Storage Tank",
-    status: status.Active,
-    link: "https://www.htproducts.com/glasslinedtankdocuments.html",
-  },
-  {
-    id: "SR",
-    name: "Large Volume Storage Tank",
-    status: status.Active,
-    link: "http://www.htproducts.com/largevolumestoragetanks-documents.html",
-  },
-  {
     id: "PH",
     name: "Pheonix Gas Fired WH",
     status: status.Active,
@@ -125,24 +113,66 @@ export const modelList: modelListTypes[] = [
     status: status.Active,
     link: "http://www.htproducts.com/pioneerdocuments.html",
   },
+
+  ///////////////////////////////
+  /* 
+  
+  SSC:       Superstor Contender     yes
+  SSC-TC:    Superstor Contender     yes
+  SSU-N:     Superstor Ultra         yes
+  SSU-CB:    Superstor Solar
+  
+  */
   {
-    id: "SSU",
-    name: "Stainless Steel Superstor Ultra",
+    id: "SSC",
+    name: "INDIRECT Superstor Contender Titanium",
     status: status.Active,
+    link: "https://www.htproducts.com/superstorcontenderdocuments.html",
+  },
+  {
+    id: "SSC-TC",
+    name: "INDIRECT Superstor Contender Titanium",
+    status: status.Active,
+    link: "https://www.htproducts.com/superstor-contender-titanium-documents.html",
+  },
+  {
+    id: "SSU-N",
+    name: "INDIRECT Stainless Steel Superstor Ultra",
+    status: status.Active,
+    link: "https://htproducts.com/superstorultradocuments.html",
+  },
+  {
+    id: "SSU-CB",
+    name: "STORAGE Stainless Steel",
+    status: status.Discontinued,
     link: "https://www.htproducts.com/superstorultratankdocuments.html",
   },
   {
-    id: "SSC",
-    name: "Superstor Contender Titanium",
+    id: "MSSU",
+    name: "INDIRECT Superstor Ultra Max",
     status: status.Active,
-    link: "https://www.htproducts.com/superstor-contender-titanium.html",
+    link: "https://htproducts.com/superstorultramax-multisource-documents.html",
   },
   {
-    id: "MSSU",
-    name: "Superstor Ultra Max",
+    id: "MSSU-NSE",
+    name: "INDIRECT Superstor Ultra Max",
     status: status.Active,
-    link: "https://www.htproducts.com/superstor-ultramax-multisource.html",
+    link: "https://htproducts.com/superstorultramax-documents.html",
   },
+  {
+    id: "GL",
+    name: "Glass Lined Storage Tank",
+    status: status.Active,
+    link: "https://www.htproducts.com/glasslinedtankdocuments.html",
+  },
+  {
+    id: "SR",
+    name: "Large Volume Storage Tank",
+    status: status.Active,
+    link: "http://www.htproducts.com/largevolumestoragetanks-documents.html",
+  },
+  ////////////////////////////////
+
   {
     id: "RGH",
     name: "Crossover (RGH) Wall",
