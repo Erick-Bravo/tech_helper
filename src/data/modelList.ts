@@ -86,13 +86,13 @@ export const modelList: modelListTypes[] = [
   {
     id: "GL",
     name: "Glass Lined Storage Tank",
-    modelStatus: modelStatus.Active,
+    status: status.Active,
     link: "https://www.htproducts.com/glasslinedtankdocuments.html",
   },
   {
     id: "SR",
     name: "Large Volume Storage Tank",
-    modelStatus: modelStatus.Active,
+    status: status.Active,
     link: "http://www.htproducts.com/largevolumestoragetanks-documents.html",
   },
   {
@@ -125,24 +125,48 @@ export const modelList: modelListTypes[] = [
     modelStatus: modelStatus.Active,
     link: "http://www.htproducts.com/pioneerdocuments.html",
   },
+
+  ///////////////////////////////
+  /* 
+  
+  SSC:       Superstor Contender     yes
+  SSC-TC:    Superstor Contender     yes
+  SSU-N:     Superstor Ultra         yes
+  SSU-CB:    Superstor Solar
+  
+  */
+  {
+    id: "SSC",
+    name: "INDIRECT Superstor Contender Titanium",
+    status: status.Active,
+    link: "https://www.htproducts.com/superstorcontenderdocuments.html",
+  },
+  {
+    id: "SSC-TC",
+    name: "INDIRECT Superstor Contender Titanium",
+    status: status.Active,
+    link: "https://www.htproducts.com/superstor-contender-titanium-documents.html",
+  },
   {
     id: "SSU",
     name: "Stainless Steel Superstor Ultra",
-    modelStatus: modelStatus.Active,
+    status: status.Active,
     link: "https://www.htproducts.com/superstorultratankdocuments.html",
   },
   {
     id: "SSC",
     name: "Superstor Contender Titanium",
-    modelStatus: modelStatus.Active,
+    status: status.Active,
     link: "https://www.htproducts.com/superstor-contender-titanium.html",
   },
   {
     id: "MSSU",
     name: "Superstor Ultra Max",
-    modelStatus: modelStatus.Active,
+    status: status.Active,
     link: "https://www.htproducts.com/superstor-ultramax-multisource.html",
   },
+  ////////////////////////////////
+
   {
     id: "RGH",
     name: "Crossover (RGH) Wall",
