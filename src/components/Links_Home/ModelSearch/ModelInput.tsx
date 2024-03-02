@@ -1,27 +1,27 @@
-import { Box, Button, Flex, Input, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Input, Link, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { modelList, modelListTypes } from "../../../data/modelList";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { linkColor, secondary } from "../../../globals";
+import { linkColor } from "../../../globals";
 
 const ModelInput = () => {
   const [inputText, setInput] = useState("");
   const [result, setResult] = useState<modelListTypes[]>([
-    { id: "Model", name: "Name", status: "Status", link: "" },
+    { id: "Model", name: "Name", modelStatus: "Status", link: "" },
   ]);
 
   const handleSubmit = () => {
     const filteredList = modelList.filter((item) => {
-      if (inputText === "") {
-        return
-      }
-      return item.id.includes(inputText);
-    });
+          if (inputText === "") {
+          return
+        }
+        return item.id.includes(inputText.toUpperCase());
+      })
     setResult(filteredList);
   };
 
   const modelInput = (event: { target: { value: string } }) => {
-    const text = event.target.value.toUpperCase();
+    const text = event.target.value;
     setInput(text);
   };
 
@@ -49,13 +49,13 @@ const ModelInput = () => {
         result[0].id !== "Model" &&
         result.map((item) => {
           return (
-            <Box key={item.name}>
+            <Box key={item.id}>
               <Text
                 fontSize="35px"
                 m="20px 10px"
               >{` ${item.id} : ${item.name}`}</Text>
               <Flex justifyContent="center" alignItems="center">
-                <Text mr="20px">{item.status}</Text>
+                <Text mr="20px">{item.modelStatus}</Text>
                 {item.link !== "" && (
                   <Link
                     href={item.link}
