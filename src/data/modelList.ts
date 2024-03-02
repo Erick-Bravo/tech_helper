@@ -1,3 +1,8 @@
+export enum modelStatus {
+  Active = "Active",
+  Discontinued = "Discontinued"
+}
+
 export type modelListTypes = {
   id: string;
   name: string;
@@ -5,12 +10,7 @@ export type modelListTypes = {
   link: string;
 };
 
-export enum modelStatus {
-  Active = "Active",
-  Discontinued = "Discontinued"
-}
-
-export const modelList: modelListTypes[] = [
+const htpBoilerList: modelListTypes[] = [
   {
     id: "RGH",
     name: "Crossover (RGH) Floor",
@@ -40,48 +40,6 @@ export const modelList: modelListTypes[] = [
     name: "Elite XL Boiler",
     modelStatus: modelStatus.Active,
     link: "https://www.htproducts.com/elitexl-documents.html",
-  },
-  {
-    id: "ELV",
-    name: "Everlast Elevate Residential WH",
-    modelStatus: modelStatus.Active,
-    link: "https://www.htproducts.com/everlast-elevate-documents.html",
-  },
-  {
-    id: "SUPR",
-    name: "Everlast Elevate Residential WH",
-    modelStatus: modelStatus.Active,
-    link: "https://www.htproducts.com/everlast-elevate-documents.html",
-  },
-  {
-    id: "EVR",
-    name: "Everlast Residential Electric WH",
-    modelStatus: modelStatus.Active,
-    link: "https://www.htproducts.com/everlast-elevate-documents.html",
-  },
-  {
-    id: "EVR",
-    name: "Everlast Point of Use Residential Electric WH",
-    modelStatus: modelStatus.Active,
-    link: "https://htproducts.com/everlast-residential-point-of-use-documents.html",
-  },
-  {
-    id: "EVR",
-    name: "Everlast Mini Tank",
-    modelStatus: modelStatus.Active,
-    link: "https://htproducts.com/everlast-residential-point-of-use-documents.html",
-  },
-  {
-    id: "EVC",
-    name: "Everlast Medium Duty 3 Element",
-    modelStatus: modelStatus.Active,
-    link: "https://www.htproducts.com/everlast-medium-duty-commercial-documents.html",
-  },
-  {
-    id: "EVG",
-    name: "Everlast Grid Enabled",
-    modelStatus: modelStatus.Active,
-    link: "https://www.htproducts.com/EVG-documents.html",
   },
   {
     id: "PH",
@@ -168,24 +126,6 @@ export const modelList: modelListTypes[] = [
     link: "http://www.htproducts.com/EnduroTi-documents-dis.html",
   },
   {
-    id: "EV",
-    name: "Everlast",
-    modelStatus: modelStatus.Discontinued,
-    link: "http://www.htproducts.com/everlast-dis.html",
-  },
-  {
-    id: "EVC",
-    name: "Everlast Light Duty, Commercial Electric",
-    modelStatus: modelStatus.Discontinued,
-    link: "http://www.htproducts.com/everlast-light-com-documents-dis.html",
-  },
-  {
-    id: "EVC",
-    name: "Everlast Medium Duty, Commercial Electric",
-    modelStatus: modelStatus.Discontinued,
-    link: "http://www.htproducts.com/everlast-commercial-documents-dis.html",
-  },
-  {
     id: "RT",
     name: "Hydra Smart RT",
     modelStatus: modelStatus.Discontinued,
@@ -269,4 +209,126 @@ export const modelList: modelListTypes[] = [
     modelStatus: modelStatus.Discontinued,
     link: "http://www.htproducts.com/voyager-dis.html",
   },
+];
+
+const htpTankList: modelListTypes[] = [
+  {
+    id: "SSC",
+    name: "INDIRECT Superstor Contender Titanium",
+    modelStatus: modelStatus.Active,
+    link: "https://www.htproducts.com/superstorcontenderdocuments.html",
+  },
+  {
+    id: "SSC-TC",
+    name: "INDIRECT Superstor Contender Titanium",
+    modelStatus: modelStatus.Active,
+    link: "https://www.htproducts.com/superstor-contender-titanium-documents.html",
+  },
+  {
+    id: "SSU-N",
+    name: "INDIRECT Stainless Steel Superstor Ultra",
+    modelStatus: modelStatus.Active,
+    link: "https://htproducts.com/superstorultradocuments.html",
+  },
+  {
+    id: "SSU-CB",
+    name: "STORAGE Stainless Steel",
+    modelStatus: modelStatus.Discontinued,
+    link: "https://www.htproducts.com/superstorultratankdocuments.html",
+  },
+  {
+    id: "MSSU",
+    name: "Superstor Ultra Max INDIRECT ",
+    modelStatus: modelStatus.Active,
+    link: "https://htproducts.com/superstorultramax-multisource-documents.html",
+  },
+  {
+    id: "MSSU-NSE",
+    name: "Superstor Ultra Max Mult--Source INDIRECT",
+    modelStatus: modelStatus.Active,
+    link: "https://htproducts.com/superstorultramax-documents.html",
+  },
+  {
+    id: "GL",
+    name: "Glass Lined Storage Tank",
+    modelStatus: modelStatus.Active,
+    link: "https://www.htproducts.com/glasslinedtankdocuments.html",
+  },
+  {
+    id: "SR",
+    name: "Large Volume Storage Tank",
+    modelStatus: modelStatus.Active,
+    link: "http://www.htproducts.com/largevolumestoragetanks-documents.html",
+  }
+];
+
+const htpElectricList: modelListTypes[] = [
+  {
+    id: "ELV",
+    name: "Everlast Elevate Residential WH",
+    modelStatus: modelStatus.Active,
+    link: "https://www.htproducts.com/everlast-elevate-documents.html",
+  },
+  {
+    id: "SUPR",
+    name: "Everlast Elevate Residential WH",
+    modelStatus: modelStatus.Active,
+    link: "https://www.htproducts.com/everlast-elevate-documents.html",
+  },
+  {
+    id: "EVR-1",
+    name: "Everlast Residential Electric WH",
+    modelStatus: modelStatus.Active,
+    link: "https://www.htproducts.com/everlast-elevate-documents.html",
+  },
+  {
+    id: "EVR-2",
+    name: "Everlast Point of Use Residential Electric WH",
+    modelStatus: modelStatus.Active,
+    link: "https://htproducts.com/everlast-residential-point-of-use-documents.html",
+  },
+  {
+    id: "EVR-3",
+    name: "Everlast Mini Tank",
+    modelStatus: modelStatus.Active,
+    link: "https://htproducts.com/everlast-residential-point-of-use-documents.html",
+  },
+
+  {
+    id: "EVG",
+    name: "Everlast Grid Enabled",
+    modelStatus: modelStatus.Active,
+    link: "https://www.htproducts.com/EVG-documents.html",
+  },
+  {
+    id: "EV",
+    name: "Everlast",
+    modelStatus: modelStatus.Discontinued,
+    link: "http://www.htproducts.com/everlast-dis.html",
+  },
+  {
+    id: "EVC-1",
+    name: "Everlast Medium Duty 3 Element",
+    modelStatus: modelStatus.Active,
+    link: "https://www.htproducts.com/everlast-medium-duty-commercial-documents.html",
+  },
+  {
+    id: "EVC-2",
+    name: "Everlast Light Duty, Commercial Electric",
+    modelStatus: modelStatus.Discontinued,
+    link: "http://www.htproducts.com/everlast-light-com-documents-dis.html",
+  },
+  {
+    id: "EVC-3",
+    name: "Everlast Medium Duty, Commercial Electric",
+    modelStatus: modelStatus.Discontinued,
+    link: "http://www.htproducts.com/everlast-commercial-documents-dis.html",
+  }
+];
+
+
+export const modelList: modelListTypes[] = [
+  ...htpBoilerList,
+  ...htpElectricList,
+  ...htpTankList,
 ];
