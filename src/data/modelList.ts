@@ -12,7 +12,7 @@ export type modelListTypes = {
 
 const htpBoilerList: modelListTypes[] = [
   {
-    id: "RGH",
+    id: "RGH-F",
     name: "Crossover (RGH) Floor",
     modelStatus: modelStatus.Active,
     link: "https://htproducts.com/RGH75100-documents.html",
@@ -72,7 +72,7 @@ const htpBoilerList: modelListTypes[] = [
     link: "http://www.htproducts.com/pioneerdocuments.html",
   },
   {
-    id: "RGH",
+    id: "RGH-W",
     name: "Crossover (RGH) Wall",
     modelStatus: modelStatus.Discontinued,
     link: "https://www.htproducts.com/crossover-documents-dis.html",
@@ -84,13 +84,13 @@ const htpBoilerList: modelListTypes[] = [
     link: "http://www.htproducts.com/crossover-commercial-documents-dis.html",
   },
   {
-    id: "EFTC",
+    id: "EFTC-W",
     name: "EFT Combination Boiler (Wall)",
     modelStatus: modelStatus.Discontinued,
     link: "http://www.htproducts.com/EFT_Combination_Wall_Dis.html",
   },
   {
-    id: "EFTC",
+    id: "EFTC-F",
     name: "EFT Combination Boiler (Floor)",
     modelStatus: modelStatus.Discontinued,
     link: "http://www.htproducts.com/EFT_Combination_Floor_Dis.html",
