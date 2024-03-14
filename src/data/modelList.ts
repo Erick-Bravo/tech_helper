@@ -271,7 +271,7 @@ const htpElectricList: modelListTypes[] = [
   },
   {
     id: "ELV-DR",
-    name: "Everlast Elevate Demand Repsonse",
+    name: "Everlast Elevate Demand Response",
     modelStatus: modelStatus.Active,
     link: "https://www.htproducts.com/everlast-elevate-demand-response-documents.html",
   },
@@ -289,7 +289,7 @@ const htpElectricList: modelListTypes[] = [
   },
   {
     id: "EVR-DR",
-    name: "Everlast Residential Demand Repsonse",
+    name: "Everlast Residential Demand Response",
     modelStatus: modelStatus.Active,
     link: "https://www.htproducts.com/everlast-demand-response-documents.html",
   },
