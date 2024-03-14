@@ -238,15 +238,15 @@ const htpTankList: modelListTypes[] = [
   },
   {
     id: "MSSU",
-    name: "Superstor Ultra Max INDIRECT ",
+    name: "INDIRECT Superstor Ultra Max",
     modelStatus: modelStatus.Active,
-    link: "https://htproducts.com/superstorultramax-multisource-documents.html",
+    link: "https://www.htproducts.com/superstorultramax-documents.html",
   },
   {
-    id: "MSSU-NSE",
-    name: "Superstor Ultra Max Mult--Source INDIRECT",
+    id: "MSSU-SE",
+    name: "INDIRECT Superstor Ultra Max Multi-Use w/ element",
     modelStatus: modelStatus.Active,
-    link: "https://htproducts.com/superstorultramax-documents.html",
+    link: "https://www.htproducts.com/superstorultramax-multisource-documents.html",
   },
   {
     id: "GL",
