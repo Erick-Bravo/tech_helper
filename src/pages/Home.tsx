@@ -1,4 +1,14 @@
-import { Box, Flex, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Link,
+  Tab,
+  TabIndicator,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+} from "@chakra-ui/react";
 import Search from "../components/Links_Home/ModelSearch/ModelSearch";
 import { linkColor } from "../globals";
 import { SideBarData } from "../data/sideBarData";
@@ -21,7 +31,29 @@ const Home = () => {
         })}
       </Box>
       <Flex w="100%" justifyContent="center" pr="12.5%">
-        <Search />
+
+        <Tabs isFitted variant="soft-rounded" colorScheme="blue" w="100%">
+          <Flex w="100%" justifyContent="center">
+            <TabList w="700px">
+              <Tab _selected={{ color: 'white', bg: 'blue.500' }}>HTP</Tab>
+              <Tab _selected={{ color: 'white', bg: 'blue.500' }}>Ariston</Tab>
+            </TabList>
+          </Flex>
+
+          <TabIndicator
+            mt="-1.5px"
+            height="2px"
+            borderRadius="1px"
+          />
+          <TabPanels>
+            <TabPanel>
+              <Search />
+            </TabPanel>
+            <TabPanel>
+              <Box w="100%"></Box>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
       </Flex>
     </Flex>
   );
