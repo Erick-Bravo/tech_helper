@@ -83,7 +83,7 @@ const SerialInput = () => {
         </Flex>
 
         <Flex justifyContent="space-between">
-          <Text m="20px">Calendar: </Text>
+          <Text m="20px">D.O.M: </Text>
           <Text m="20px" fontWeight="bold">
             {calendar} {year}
           </Text>
