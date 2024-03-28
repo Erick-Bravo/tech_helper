@@ -17,14 +17,6 @@ const OldAssModel = () => {
     { letter: "Year", year: 0 },
   ]);
 
-  // const revisionOutput = () => {
-  //Use year to determine revision,
-  //if on a transition year, check month
-  //   if (year[0].year > 2008) {
-  //     return "Rev 2"
-  //   }
-  // };
-
   //Month
   const handleMonthSubmit = () => {
     const filteredList = oldAssMonthList.filter((item) => {
