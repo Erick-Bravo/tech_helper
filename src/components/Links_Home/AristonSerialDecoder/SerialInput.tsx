@@ -3,11 +3,6 @@ import { NotAllowedIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 
 // 331407823193330000637
-// Material Code
-// Ariston Factory
-// Year
-// calendarDay
-// Product number made on same day
 
 const SerialInput = () => {
   const [input, setInput] = useState<string>("");
@@ -25,10 +20,16 @@ const SerialInput = () => {
       return;
     }
 
+    const dayOfYear = Number(input.substring(11, 14));
+    const date = new Date(new Date().getFullYear(), 0);
+    date.setDate(dayOfYear);
+    const month = date.toLocaleString("default", { month: "long" });
+    const day = date.getDate();
+
     setMaterial(input.substring(0, 7));
     setFactory(input.substring(7, 9));
-    setYear(input.substring(9, 11));
-    setCalendar(input.substring(11, 14));
+    setYear(`20${input.substring(9, 11)}`);
+    setCalendar(`${month} ${day},`);
     setProductOnDay(input.substring(14, 21));
   };
 
@@ -84,7 +85,7 @@ const SerialInput = () => {
         <Flex justifyContent="space-between">
           <Text m="20px">Calendar: </Text>
           <Text m="20px" fontWeight="bold">
-            {calendar} 20{year}
+            {calendar} {year}
           </Text>
         </Flex>
 
