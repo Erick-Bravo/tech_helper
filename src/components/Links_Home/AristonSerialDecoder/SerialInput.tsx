@@ -1,4 +1,4 @@
-import { Box, Flex, Input, Link, Text } from "@chakra-ui/react";
+import { Flex, Input, Text } from "@chakra-ui/react";
 import { NotAllowedIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 
@@ -58,7 +58,7 @@ const SerialInput = () => {
         />
       </Flex>
       {result.length !== 21 && result !== "" && (
-        <Flex alignItems="center">
+        <Flex alignItems="center" mb="30px">
           <NotAllowedIcon color="red" h="20px" w="20px" />
           <Text fontSize="20px" m="0 20px">
             serial is not 21 digits long

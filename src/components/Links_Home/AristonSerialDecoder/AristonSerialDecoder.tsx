@@ -1,5 +1,4 @@
-import { Box, Flex, Input, Link, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import {Flex, Text } from "@chakra-ui/react";
 import SerialInput from "./SerialInput";
 
 const AristonSerialDecoder = () => {
