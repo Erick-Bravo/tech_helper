@@ -12,6 +12,7 @@ import {
 import Search from "../components/Links_Home/ModelSearch/ModelSearch";
 import { linkColor } from "../globals";
 import { SideBarData } from "../data/sideBarData";
+import AristonSerialDecoder from "../components/Links_Home/AristonSerialDecoder/AristonSerialDecoder";
 
 const Home = () => {
   return (
@@ -50,7 +51,7 @@ const Home = () => {
               <Search />
             </TabPanel>
             <TabPanel>
-              <Box w="100%"></Box>
+              <AristonSerialDecoder />
             </TabPanel>
           </TabPanels>
         </Tabs>
