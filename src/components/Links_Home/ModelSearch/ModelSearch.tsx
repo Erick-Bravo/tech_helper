@@ -13,6 +13,7 @@ const Search = () => {
           Model Search
         </Text>
         <Text fontSize="15px">Input the letters of model (Example: "UFT")</Text>
+        <Text fontSize="15px">If Munchkin, input "MUN"</Text>
         <ModelInput />
       </Flex>
     </Flex>
